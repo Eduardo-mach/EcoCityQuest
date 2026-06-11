@@ -1,0 +1,10 @@
+config_version=5
+
+[application]
+
+config/name="EcoCityQuest"
+config/features=PackedStringArray("4.3", "Forward+")
+
+[autoload]
+
+GerenciadorJogo="*res://gerenciadorjogo.gd"
