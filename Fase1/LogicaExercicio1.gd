@@ -25,7 +25,7 @@ var total_pares: int = 0
 
 # Prepara o jogo do zero
 func inicializar_jogo():
-	cartas_tabuleiro.clear_cache()
+	cartas_tabuleiro.clear()
 	pares_descobertos = 0
 	carta_selecionada_1 = -1
 	carta_selecionada_2 = -1
