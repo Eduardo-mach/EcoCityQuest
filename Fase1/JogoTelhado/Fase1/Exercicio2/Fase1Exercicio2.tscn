@@ -1,0 +1,124 @@
+[gd_scene load_steps=11 format=3 uid="uid://b1f2e2x2y2001"]
+
+[ext_resource type="Script" uid="uid://vnif12eeqr1s" path="res://scripts/Fase1Exercicio2.gd" id="1_p40mu"]
+[ext_resource type="Script" uid="uid://cmklottfd3prn" path="res://scripts/LogicaFase1Exercicio2.gd" id="2_uholv"]
+[ext_resource type="Texture2D" uid="uid://c8ul52idrf502" path="res://assets/imagens/Copilot_20260614_195052.png" id="3_8mqfx"]
+[ext_resource type="Texture2D" uid="uid://dwcsobdidygw0" path="res://assets/imagens/casa.png" id="3_bavxj"]
+[ext_resource type="Texture2D" uid="uid://cwyhm4c6f0lou" path="res://assets/imagens/placa_solar.png" id="4_8mqfx"]
+[ext_resource type="Script" uid="uid://du7oqhe0lreia" path="res://scripts/ItemArrastavel.gd" id="5_qm2dm"]
+[ext_resource type="Texture2D" uid="uid://bprw3d27qyvm7" path="res://assets/imagens/entulho.png" id="6_4e32r"]
+[ext_resource type="Texture2D" uid="uid://dq01sfujgijwx" path="res://assets/imagens/icone_voltar.png" id="7_861j8"]
+[ext_resource type="Texture2D" uid="uid://2601md37q5ic" path="res://assets/imagens/icone_ajuda.png" id="8_60hws"]
+[ext_resource type="Texture2D" uid="uid://810xyq1fq0r3" path="res://assets/imagens/Captura de tela 2026-06-14 202107.png" id="10_bavxj"]
+
+[node name="JogoTelhado" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 483.0
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_p40mu")
+
+[node name="LogicaExercicio" type="Node" parent="."]
+script = ExtResource("2_uholv")
+
+[node name="Fundo" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.731
+anchor_bottom = 1.026
+offset_left = 2.0
+offset_top = 1.0
+offset_right = -40.18506
+offset_bottom = 16.984009
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_8mqfx")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="LabelFase" type="Label" parent="."]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 32.0
+offset_right = 221.0
+offset_bottom = 55.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+text = "Fase 1 Exercício 2"
+
+[node name="Casa" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 345.0
+offset_top = 139.0
+offset_right = 819.0
+offset_bottom = 435.0
+texture = ExtResource("3_bavxj")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="DropTelhado" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 559.00006
+offset_top = 196.0
+offset_right = 723.45105
+offset_bottom = 262.25952
+rotation = -0.0034412667
+scale = Vector2(0.9912348, 0.9374878)
+
+[node name="ItemPlacaSolar" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 372.0
+offset_top = 410.00003
+offset_right = 607.7058
+offset_bottom = 523.2866
+rotation = 0.006130986
+texture = ExtResource("4_8mqfx")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("5_qm2dm")
+nome_objeto = "placa_solar"
+
+[node name="ItemEntulho" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 585.0
+offset_top = 412.0
+offset_right = 754.0
+offset_bottom = 532.0
+texture = ExtResource("6_4e32r")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("5_qm2dm")
+nome_objeto = "entulho"
+
+[node name="BotaoVoltar" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1055.0
+offset_top = 23.0
+offset_right = 1105.0
+offset_bottom = 80.0
+texture_normal = ExtResource("7_861j8")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="BotaoAjuda" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1003.0
+offset_top = 25.0
+offset_right = 1072.0
+offset_bottom = 80.0
+texture_normal = ExtResource("8_60hws")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Titulo" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 315.0
+offset_top = 36.0
+offset_right = 823.0
+offset_bottom = 142.0
+texture = ExtResource("10_bavxj")
+expand_mode = 1
