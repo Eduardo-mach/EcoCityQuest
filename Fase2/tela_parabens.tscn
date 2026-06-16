@@ -1,0 +1,103 @@
+[gd_scene format=3 uid="uid://b7l550csn2siu"]
+
+[ext_resource type="Texture2D" uid="uid://cmxayw6kvmbl2" path="res://Fotos/fotoverde.png" id="1_qa804"]
+[ext_resource type="Texture2D" uid="uid://c66tadcbiloj6" path="res://Fotos/Rectangle 35.png" id="2_unvfo"]
+[ext_resource type="Texture2D" uid="uid://c7vtt6q4edtru" path="res://Fotos/trofeu.png" id="3_lbnuu"]
+[ext_resource type="Texture2D" uid="uid://bybnwnftn8lhe" path="res://Fotos/Botão avançar.png" id="4_01rjm"]
+[ext_resource type="Texture2D" uid="uid://brjhoyppa02f6" path="res://Fotos/trophy_svgrepo.com.png" id="5_4no88"]
+
+[node name="TelaParabens" type="Control" unique_id=1379384184]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 293.0
+offset_bottom = 376.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FundoVerde" type="TextureRect" parent="." unique_id=1633772727]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 6.0
+offset_right = 1153.0
+offset_bottom = 646.0
+texture = ExtResource("1_qa804")
+expand_mode = 1
+
+[node name="PainelAmarelo" type="TextureRect" parent="." unique_id=954458937]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 123.0
+offset_right = 1105.0
+offset_bottom = 599.0
+texture = ExtResource("2_unvfo")
+expand_mode = 1
+
+[node name="Trofeu_E_Losangos" type="TextureRect" parent="." unique_id=1839339506]
+layout_mode = 0
+offset_left = 216.0
+offset_top = 23.0
+offset_right = 441.0
+offset_bottom = 232.0
+pivot_offset = Vector2(8, 23)
+texture = ExtResource("3_lbnuu")
+expand_mode = 1
+
+[node name="Botao_Avancarr" type="TextureButton" parent="." unique_id=1940456279]
+layout_mode = 0
+offset_left = 1038.0001
+offset_top = 568.0
+offset_right = 1227.0001
+offset_bottom = 668.0
+scale = Vector2(0.6122277, 0.7511338)
+texture_normal = ExtResource("4_01rjm")
+
+[node name="Losangos" type="TextureRect" parent="." unique_id=1708287308]
+layout_mode = 0
+offset_left = 439.0
+offset_top = 9.0
+offset_right = 635.0
+offset_bottom = 236.0
+texture = ExtResource("5_4no88")
+expand_mode = 1
+
+[node name="Losangos" type="TextureRect" parent="Losangos" unique_id=1672557430]
+layout_mode = 0
+offset_left = 176.0
+offset_top = 13.0
+offset_right = 378.0
+offset_bottom = 224.0
+texture = ExtResource("5_4no88")
+expand_mode = 1
+
+[node name="Linha1" type="Label" parent="." unique_id=766555809]
+layout_mode = 0
+offset_left = 420.0
+offset_top = 230.0
+offset_right = 830.0
+offset_bottom = 388.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 80
+text = "PARABÉNS"
+
+[node name="Linha2" type="Label" parent="." unique_id=217356846]
+layout_mode = 0
+offset_left = 391.0
+offset_top = 393.0
+offset_right = 845.0
+offset_bottom = 506.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 68
+text = "CONCLUÍDAS"
+
+[node name="Linha3" type="Label" parent="." unique_id=778963447]
+layout_mode = 0
+offset_left = 348.0
+offset_top = 330.0
+offset_right = 903.0
+offset_bottom = 443.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 68
+text = "TODAS AS FASES"
+autowrap_trim_flags = 128
