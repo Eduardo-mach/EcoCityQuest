@@ -74,19 +74,35 @@ func processar_escolha(nome_objeto: String):
 				$Botao_Arvore.modulate = Color(0.5, 0.5, 0.5)
 				verificar_progresso_jogo("Você plantou árvores ao longo da via para trazer mais sustentabilidade!")
 
-# Função que checa se o jogador já fez as duas ações necessárias
+# --- FUNÇÃO SUBSTITUÍDA E ATUALIZADA AQUI ---
 func verificar_progresso_jogo(mensagem_atual: String):
 	if usou_trator and usou_arvore:
 		jogo_finalizado = true
 		timer_interno.stop()
 		titulo.text = "PARABÉNS!"
 		descricao.text = "Você usou o trator para arrumar o asfalto e plantou árvores para criar uma linda rua verde e sustentável!"
-		titulo.modulate = Color(0.3, 1, 0.3) # Verde de vitória
+		titulo.modulate = Color(0.3, 1, 0.3)
 		descricao.modulate = Color(0.3, 1, 0.3)
+		
+		# CALCULA A PONTUAÇÃO
+		var tempo_gasto = 420 - tempo_restante
+		var erros = 0 
+		var pontuacao_rua = int(10000 - (erros * 100) - tempo_gasto)
+		if pontuacao_rua < 0: pontuacao_rua = 0
+		
+		# SALVA DIRETO NO SEU NODE DE RANKING GLOBAL
+		# Mudamos o caminho aqui para conversar com o nó que deu na imagem!
+		var ranking_global = get_node("/root/GerenciadorRanking")
+		ranking_global.pontos_exercicio1 = pontuacao_rua
+		
+		# Espera 3 segundos e avança para a tela de parabéns
+		await get_tree().create_timer(3.0).timeout
+		get_tree().change_scene_to_file("res://Fase2/tela_pontuacao1.tscn")
+		
 	else:
 		titulo.text = "MUITO BEM..."
 		descricao.text = mensagem_atual + " A rua ainda precisa de mais uma melhoria. O que mais falta fazer?"
-		titulo.modulate = Color(0.3, 0.7, 1) # Azul informativo
+		titulo.modulate = Color(0.3, 0.7, 1)
 		descricao.modulate = Color(0.3, 0.7, 1)
 
 # Identifica se houve clique de mouse tradicional nas imagens

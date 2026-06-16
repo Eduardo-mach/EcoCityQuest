@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bhw88lk68yn3h"]
 
 [ext_resource type="Texture2D" uid="uid://cmxayw6kvmbl2" path="res://Fotos/fotoverde.png" id="1_3kxxj"]
+[ext_resource type="Script" uid="uid://b6v1q7ypdg5s6" path="res://Fase2/tela_ranking.gd" id="1_rr7na"]
 [ext_resource type="Texture2D" uid="uid://c66tadcbiloj6" path="res://Fotos/Rectangle 35.png" id="2_13rke"]
 [ext_resource type="Texture2D" uid="uid://c7vtt6q4edtru" path="res://Fotos/trofeu.png" id="3_c22wc"]
 [ext_resource type="Texture2D" uid="uid://bja784sqcjdci" path="res://Fotos/Botão voltar.png" id="4_13rke"]
@@ -18,11 +19,12 @@ offset_right = 338.0
 offset_bottom = 413.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_rr7na")
 
 [node name="FundoVerde" type="TextureRect" parent="." unique_id=1066660564]
 layout_mode = 0
-offset_right = 1153.0
-offset_bottom = 636.0
+offset_right = 1181.0
+offset_bottom = 751.0
 texture = ExtResource("1_3kxxj")
 expand_mode = 1
 
@@ -73,6 +75,11 @@ size_flags_vertical = 8
 texture = ExtResource("4_aak6l")
 expand_mode = 1
 
+[node name="Texto_Placar" type="Label" parent="Barra_1Lugar" unique_id=1735628079]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
 [node name="Barra_2Lugar" type="TextureRect" parent="." unique_id=1704334908]
 layout_mode = 0
 offset_left = 132.0
@@ -82,6 +89,11 @@ offset_bottom = 429.0
 texture = ExtResource("4_aak6l")
 expand_mode = 1
 
+[node name="Texto_Placar" type="Label" parent="Barra_2Lugar" unique_id=83529631]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
 [node name="Barra_3Lugar" type="TextureRect" parent="." unique_id=729952212]
 layout_mode = 0
 offset_left = 130.0
@@ -90,6 +102,11 @@ offset_right = 1010.0
 offset_bottom = 547.0
 texture = ExtResource("4_aak6l")
 expand_mode = 1
+
+[node name="Texto_Placar" type="Label" parent="Barra_3Lugar" unique_id=334774506]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
 
 [node name="TextureButton" type="TextureButton" parent="." unique_id=1986031351]
 layout_mode = 1

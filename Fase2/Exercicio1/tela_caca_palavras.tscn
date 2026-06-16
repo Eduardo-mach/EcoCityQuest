@@ -69,9 +69,9 @@ layout_mode = 2
 
 [node name="FundoCinza" type="TextureRect" parent="." unique_id=1659202755]
 layout_mode = 0
-offset_left = 6.0
+offset_left = 19.0
 offset_top = 59.0
-offset_right = 1059.0
+offset_right = 1072.0
 offset_bottom = 214.0
 texture = ExtResource("3_y0aah")
 expand_mode = 1
@@ -114,10 +114,10 @@ texture_normal = ExtResource("4_y0aah")
 
 [node name="Titulo" type="Label" parent="." unique_id=1970349874]
 layout_mode = 0
-offset_left = 38.0
-offset_top = 67.0
-offset_right = 1020.0
-offset_bottom = 153.0
+offset_left = 65.0
+offset_top = 72.0
+offset_right = 1047.0
+offset_bottom = 158.0
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 55
@@ -128,10 +128,10 @@ vertical_alignment = 1
 
 [node name="Descricao" type="Label" parent="." unique_id=1215803085]
 layout_mode = 0
-offset_left = 61.0
-offset_top = 148.0
-offset_right = 1004.0
-offset_bottom = 197.0
+offset_left = 91.0
+offset_top = 144.0
+offset_right = 1034.0
+offset_bottom = 193.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 31
 text = "Procure as palavras com que você se deparou ao longo das atividades."

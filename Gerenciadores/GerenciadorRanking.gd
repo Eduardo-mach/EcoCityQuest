@@ -1,5 +1,8 @@
 extends Node
 
+var pontos_exercicio1 : int = 0
+var pontos_exercicio2 : int = 0
+
 # Função para registrar uma nova pontuação e ordenar o ranking
 func registrar_pontuacao(nome: String, erros: int, tempo_segundos: float):
 	# Quanto menor o tempo e menor o número de erros, melhor a pontuação
@@ -14,7 +17,7 @@ func registrar_pontuacao(nome: String, erros: int, tempo_segundos: float):
 	}
 	
 	# Puxa o ranking atual
-	var gerenciador = get_node("/root/GerenciadorJogo")
+	var gerenciador = get_node("/root/GerenciadorRanking")
 	gerenciador.ranking.append(novo_registro)
 	
 	# Ordena do maior para o menor usando uma função customizada

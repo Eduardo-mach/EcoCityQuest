@@ -20,7 +20,8 @@ config/features=PackedStringArray("4.6")
 
 [autoload]
 
-GerenciadorJogo="*res://gerenciadorjogo.gd"
+GerenciadorRanking="*uid://k40h5ko236p0"
+GerenciadorJogo="*uid://djrfmngtrqupn"
 
 [display]
 

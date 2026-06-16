@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://c4rpuq2ffpbtx"]
 
+[ext_resource type="Script" uid="uid://dno4ihkoatsr4" path="res://Fase2/tela_pontuacao_1.gd" id="1_o2j6n"]
 [ext_resource type="Texture2D" uid="uid://cmxayw6kvmbl2" path="res://Fotos/fotoverde.png" id="1_tocxh"]
 [ext_resource type="Texture2D" uid="uid://bybnwnftn8lhe" path="res://Fotos/Botão avançar.png" id="2_osdn0"]
 [ext_resource type="Texture2D" uid="uid://c66tadcbiloj6" path="res://Fotos/Rectangle 35.png" id="3_i5ast"]
@@ -14,6 +15,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_o2j6n")
 
 [node name="FundoVerde" type="TextureRect" parent="." unique_id=1646161574]
 layout_mode = 1
@@ -65,32 +67,22 @@ offset_bottom = 198.0
 texture = ExtResource("5_p667q")
 expand_mode = 1
 
-[node name="Linha_SuaPontuacao" type="Label" parent="." unique_id=2049480589]
-layout_mode = 0
-offset_left = 305.0
-offset_top = 276.0
-offset_right = 753.0
-offset_bottom = 349.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 53
-text = "SUA PONTUAÇÃO"
-
 [node name="Linha_Parabens" type="Label" parent="." unique_id=1547927999]
 layout_mode = 0
 offset_left = 307.0
-offset_top = 359.0
+offset_top = 254.0
 offset_right = 753.0
-offset_bottom = 478.0
+offset_bottom = 373.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 87
 text = "PARABÉNS"
 
 [node name="Linha_Finalizou" type="Label" parent="." unique_id=1835926419]
 layout_mode = 0
-offset_left = 227.0
-offset_top = 457.0
-offset_right = 844.0
-offset_bottom = 590.0
+offset_left = 241.0
+offset_top = 361.0
+offset_right = 858.0
+offset_bottom = 562.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 47
 text = "Você finalizou o Exercício 1
@@ -114,3 +106,13 @@ offset_right = 1146.0
 offset_bottom = 665.0
 scale = Vector2(0.68451756, 1)
 texture_normal = ExtResource("2_osdn0")
+
+[node name="Pontuacao" type="Label" parent="." unique_id=1706107742]
+layout_mode = 0
+offset_left = 239.0
+offset_top = 437.0
+offset_right = 467.0
+offset_bottom = 502.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 47
+text = "Pontução:"

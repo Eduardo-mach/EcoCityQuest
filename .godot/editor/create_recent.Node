@@ -1,9 +1,9 @@
+Label
 VBoxContainer
 LineEdit
 TextEdit
 Button
 MarginContainer
-Label
 HBoxContainer
 TextureRect
 MenuButton
