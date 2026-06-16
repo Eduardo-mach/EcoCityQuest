@@ -1,0 +1,10 @@
+res://scenes/menu_principal.tscn
+res://scenes/menu_exit.tscn
+res://scenes/style_choice_buttons.tscn
+res://scenes/style_buttons.tscn
+res://scenes/Orquestrer.gd
+res://scenes/orquestrer.tscn
+res://scenes/menu_about.tscn
+res://scenes/MenuPrincipal.gd
+res://scenes/menu_nome.tscn
+res://scenes/MenuNome.gd

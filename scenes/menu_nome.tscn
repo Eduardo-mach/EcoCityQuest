@@ -1,0 +1,112 @@
+[gd_scene format=3 uid="uid://d1jalux60kta6"]
+
+[ext_resource type="Texture2D" uid="uid://47h52imnfl0f" path="res://assets/backgrounds/green_background.png" id="1_23gfh"]
+[ext_resource type="Script" uid="uid://cqjkmgtbgejmc" path="res://scenes/MenuNome.gd" id="2_fr5t0"]
+[ext_resource type="FontFile" uid="uid://c7kk8scqhpcmo" path="res://assets/fonts/Inter-VariableFont_opsz,wght.ttf" id="3_fr5t0"]
+[ext_resource type="StyleBox" uid="uid://ea1dkbu8ggrt" path="res://assets/textures/menu_button_iniciar.tres" id="4_5u8x3"]
+[ext_resource type="StyleBox" uid="uid://2wp7hs7av04c" path="res://assets/textures/menu_button_iniciar_pressionado.tres" id="5_axm23"]
+[ext_resource type="StyleBox" uid="uid://cr26erkd22gjd" path="res://assets/textures/menu_button_iniciar_hover.tres" id="6_67hdg"]
+
+[sub_resource type="FontVariation" id="FontVariation_5ow57"]
+base_font = ExtResource("3_fr5t0")
+
+[sub_resource type="LabelSettings" id="LabelSettings_oaffx"]
+font = SubResource("FontVariation_5ow57")
+font_size = 64
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="FontVariation" id="FontVariation_fr5t0"]
+base_font = ExtResource("3_fr5t0")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fr5t0"]
+content_margin_left = 20.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_size = 3
+shadow_offset = Vector2(-3, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5u8x3"]
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 0.6666667)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="FontVariation" id="FontVariation_1i32s"]
+base_font = ExtResource("3_fr5t0")
+variation_opentype = {
+1869640570: 14,
+2003265652: 800
+}
+
+[node name="TextureRect" type="TextureRect" unique_id=2012795573]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+texture = ExtResource("1_23gfh")
+expand_mode = 2
+stretch_mode = 2
+script = ExtResource("2_fr5t0")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1732045237]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 130
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=2036977570]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_constants/separation = 40
+
+[node name="DigiteSeuNome" type="Label" parent="MarginContainer/VBoxContainer" unique_id=674042845]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 63
+text = "DIGITE SEU NOME"
+label_settings = SubResource("LabelSettings_oaffx")
+
+[node name="InputNome" type="LineEdit" parent="MarginContainer/VBoxContainer" unique_id=2094322950]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 0.78431374)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 0.78431374)
+theme_override_fonts/font = SubResource("FontVariation_fr5t0")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_fr5t0")
+theme_override_styles/focus = SubResource("StyleBoxFlat_5u8x3")
+placeholder_text = "Digite aqui"
+max_length = 15
+
+[node name="play_button" type="Button" parent="MarginContainer/VBoxContainer" unique_id=426690306]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_1i32s")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = ExtResource("4_5u8x3")
+theme_override_styles/pressed = ExtResource("5_axm23")
+theme_override_styles/hover = ExtResource("6_67hdg")
+text = "JOGAR"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/play_button" to="." method="_on_play_button_pressed"]

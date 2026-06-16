@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://b7khleae6ulc0"]
+
+[ext_resource type="Texture2D" uid="uid://47h52imnfl0f" path="res://assets/backgrounds/green_background.png" id="1_dbr4p"]
+[ext_resource type="Texture2D" uid="uid://ck52wb1vw7ucu" path="res://assets/textures/exit-question.svg" id="2_i0gmu"]
+[ext_resource type="PackedScene" uid="uid://cibrt8b4wwe41" path="res://scenes/style_choice_buttons.tscn" id="3_qk5x0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qk5x0"]
+bg_color = Color(0, 0, 0, 0.6666667)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ege84"]
+bg_color = Color(0, 0, 0, 0.39215687)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_54t3q"]
+bg_color = Color(0, 0, 0, 0.6666667)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7sr1c"]
+bg_color = Color(0, 0, 0, 0.39215687)
+
+[node name="TextureRect" type="TextureRect" unique_id=2012795573]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+texture = ExtResource("1_dbr4p")
+expand_mode = 2
+stretch_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=774511382]
+layout_mode = 0
+offset_left = 215.0
+offset_top = 153.0
+offset_right = 1316.0
+offset_bottom = 615.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_i0gmu")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=795092101]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.0
+offset_top = 36.964996
+offset_right = 68.0
+offset_bottom = 75.965
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 242
+
+[node name="sim" parent="HBoxContainer" unique_id=1035060756 instance=ExtResource("3_qk5x0")]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.8745098, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0.8745098, 0, 1)
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qk5x0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ege84")
+
+[node name="nao" parent="HBoxContainer" unique_id=1261782793 instance=ExtResource("3_qk5x0")]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8745098, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.8745098, 0, 0, 1)
+theme_override_styles/pressed = SubResource("StyleBoxFlat_54t3q")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7sr1c")
+text = "NÃO"
