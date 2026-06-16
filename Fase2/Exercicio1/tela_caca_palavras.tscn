@@ -1,11 +1,29 @@
 [gd_scene format=3 uid="uid://conakqakr8d0k"]
 
-[ext_resource type="Script" uid="uid://coxprr0phvkl" path="res://tela_caca_palavras.gd" id="1_pbs4g"]
+[ext_resource type="Script" uid="uid://coxprr0phvkl" path="res://Fase2/Exercicio1/tela_caca_palavras.gd" id="1_pbs4g"]
 [ext_resource type="Texture2D" uid="uid://ymyqqqjrfmy0" path="res://Fotos/8947fb72b08a69bca952e4c77b909509.jpg" id="2_y0aah"]
 [ext_resource type="Texture2D" uid="uid://bja784sqcjdci" path="res://Fotos/Botão voltar.png" id="3_pbs4g"]
 [ext_resource type="Texture2D" uid="uid://56nogm1m2wg7" path="res://Fotos/images (1).jpg" id="3_y0aah"]
 [ext_resource type="Texture2D" uid="uid://b1yb5rf6vjgfe" path="res://Fotos/Ellipse 1.png" id="4_pbs4g"]
 [ext_resource type="Texture2D" uid="uid://b1oakg46gcsd3" path="res://Fotos/Botão ajuda.png" id="4_y0aah"]
+[ext_resource type="FontFile" uid="uid://c7kk8scqhpcmo" path="res://assets/fonts/Inter-VariableFont_opsz,wght.ttf" id="7_vqkkh"]
+
+[sub_resource type="FontVariation" id="FontVariation_3d23e"]
+base_font = ExtResource("7_vqkkh")
+variation_opentype = {
+1869640570: 14,
+2003265652: 800
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_yvjxp"]
+font = SubResource("FontVariation_3d23e")
+font_size = 64
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_1lmw3"]
+font = ExtResource("7_vqkkh")
+font_size = 28
+font_color = Color(0, 0, 0, 1)
 
 [node name="CacaPalavras" type="Control" unique_id=849332783]
 layout_mode = 3
@@ -19,8 +37,8 @@ metadata/_edit_use_anchors_ = true
 
 [node name="FundoRoxo" type="TextureRect" parent="." unique_id=242883457]
 layout_mode = 0
-offset_right = 1145.0
-offset_bottom = 656.0
+offset_right = 1088.0
+offset_bottom = 717.0
 texture = ExtResource("2_y0aah")
 expand_mode = 1
 
@@ -51,23 +69,24 @@ layout_mode = 2
 
 [node name="FundoCinza" type="TextureRect" parent="." unique_id=1659202755]
 layout_mode = 0
-offset_left = 36.0
-offset_top = 46.0
-offset_right = 1089.0
-offset_bottom = 201.0
+offset_left = 6.0
+offset_top = 59.0
+offset_right = 1059.0
+offset_bottom = 214.0
 texture = ExtResource("3_y0aah")
 expand_mode = 1
 
 [node name="CronometroVisua" type="TextureRect" parent="." unique_id=1037485228]
 layout_mode = 0
-offset_left = 1047.0
-offset_top = 397.99997
-offset_right = 1202.0
-offset_bottom = 552.0
+offset_left = 982.0
+offset_top = 214.0
+offset_right = 1137.0
+offset_bottom = 368.00003
 scale = Vector2(0.561266, 0.5972899)
 texture = ExtResource("4_pbs4g")
 
 [node name="Botao_Voltar" type="TextureButton" parent="." unique_id=1428596928]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.68200004
@@ -84,6 +103,7 @@ scale = Vector2(0.74558204, 0.68921727)
 texture_normal = ExtResource("3_pbs4g")
 
 [node name="Botao_Ajuda" type="TextureButton" parent="." unique_id=1415417343]
+visible = false
 layout_mode = 0
 offset_left = 1044.0
 offset_top = 579.00006
@@ -94,26 +114,28 @@ texture_normal = ExtResource("4_y0aah")
 
 [node name="Titulo" type="Label" parent="." unique_id=1970349874]
 layout_mode = 0
-offset_left = 157.0
-offset_top = 58.0
-offset_right = 1043.0
-offset_bottom = 144.0
+offset_left = 38.0
+offset_top = 67.0
+offset_right = 1020.0
+offset_bottom = 153.0
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 55
 text = "COMPLETE O CAÇA PALAVRAS"
+label_settings = SubResource("LabelSettings_yvjxp")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Descricao" type="Label" parent="." unique_id=1215803085]
 layout_mode = 0
-offset_left = 42.0
-offset_top = 133.0
-offset_right = 1226.0
-offset_bottom = 182.0
+offset_left = 61.0
+offset_top = 148.0
+offset_right = 1004.0
+offset_bottom = 197.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 31
 text = "Procure as palavras com que você se deparou ao longo das atividades."
+label_settings = SubResource("LabelSettings_1lmw3")
 
 [node name="Label_EOLICA" type="Label" parent="." unique_id=226290856]
 layout_mode = 0
@@ -171,10 +193,10 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.22900002
 anchor_bottom = 0.33200002
-offset_left = 1066.0
-offset_top = 430.0
-offset_right = 854.192
-offset_bottom = 242.86398
+offset_left = 1001.0
+offset_top = 246.00003
+offset_right = 805.68
+offset_bottom = 58.864014
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "00:00"

@@ -24,7 +24,7 @@ GerenciadorJogo="*res://gerenciadorjogo.gd"
 
 [display]
 
-window/size/viewport_width=960
-window/size/viewport_height=540
+window/size/viewport_width=1080
+window/size/viewport_height=720
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"

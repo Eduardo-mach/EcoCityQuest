@@ -30,10 +30,10 @@ stretch_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=774511382]
 layout_mode = 0
-offset_left = 215.0
-offset_top = 153.0
-offset_right = 1316.0
-offset_bottom = 615.0
+offset_left = 185.0
+offset_top = 168.0
+offset_right = 1667.2987
+offset_bottom = 790.0
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_i0gmu")
 
@@ -44,10 +44,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -68.0
-offset_top = 36.964996
-offset_right = 68.0
-offset_bottom = 75.965
+offset_left = -164.0
+offset_top = 14.0
+offset_right = 210.0
+offset_bottom = 53.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 242
