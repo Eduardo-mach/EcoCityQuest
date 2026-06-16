@@ -1,0 +1,89 @@
+[gd_scene load_steps=7 format=3 uid="uid://d1m2e3m4o5r6"]
+
+[ext_resource type="Script" uid="uid://b7yk1xkqxa2va" path="res://scripts/JogoMemoria.gd" id="1_e0rpf"]
+[ext_resource type="Script" uid="uid://blbl6irgd5486" path="res://scripts/LogicaJogoMemoria.gd" id="2_3pgaj"]
+[ext_resource type="Texture2D" uid="uid://c2hnuv6onphhm" path="res://assets/imagens/fundo_padrao.png" id="3_edo84"]
+[ext_resource type="Texture2D" uid="uid://p4mkt5me60kl" path="res://assets/imagens/titulo_jogo_memoria.png" id="4_fanka"]
+[ext_resource type="Texture2D" uid="uid://ce8g48e1dgqma" path="res://assets/imagens/icone_voltar.png" id="5_w4v6e"]
+[ext_resource type="Texture2D" uid="uid://d0k67nawpdji3" path="res://assets/imagens/icone_ajuda.png" id="6_nj2q3"]
+
+[node name="JogoMemoria" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e0rpf")
+
+[node name="LogicaJogo" type="Node" parent="."]
+script = ExtResource("2_3pgaj")
+
+[node name="Fundo" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.98700005
+anchor_bottom = 1.0
+offset_left = -1.9999981
+offset_top = 674.00006
+offset_right = -919.567
+offset_bottom = 305.1848
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -1.5691773
+scale = Vector2(2.8684416, 4.195143)
+pivot_offset = Vector2(-11.504504, 1.1918544)
+texture = ExtResource("3_edo84")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="LabelFase" type="Label" parent="."]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 15.0
+offset_right = 281.0
+offset_bottom = 38.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+text = "Fase 1 Exercício 1"
+
+[node name="Titulo" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 281.0
+offset_top = 15.0
+offset_right = 882.0
+offset_bottom = 116.0
+texture = ExtResource("4_fanka")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="GradeCartas" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 358.0
+offset_top = 143.0
+offset_right = 898.0
+offset_bottom = 553.0
+theme_override_constants/h_separation = 15
+theme_override_constants/v_separation = 15
+columns = 4
+
+[node name="BotaoVoltar" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1056.0
+offset_top = 15.0
+offset_right = 1106.0
+offset_bottom = 65.0
+texture_normal = ExtResource("5_w4v6e")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="BotaoAjuda" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1055.0
+offset_top = 64.0
+offset_right = 1105.0
+offset_bottom = 114.0
+texture_normal = ExtResource("6_nj2q3")
+ignore_texture_size = true
+stretch_mode = 5
