@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://cibrt8b4wwe41"]
+
+[ext_resource type="FontFile" uid="uid://c7kk8scqhpcmo" path="res://assets/fonts/Inter-VariableFont_opsz,wght.ttf" id="1_tr6vb"]
+
+[sub_resource type="FontVariation" id="FontVariation_3rbhv"]
+base_font = ExtResource("1_tr6vb")
+variation_opentype = {
+1869640570: 14,
+2003265652: 800
+}
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jmy3q"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tr6vb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3rbhv"]
+
+[node name="sim" type="Button" unique_id=1035060756]
+offset_right = 37.0
+offset_bottom = 31.0
+theme_override_fonts/font = SubResource("FontVariation_3rbhv")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxEmpty_jmy3q")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_tr6vb")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_3rbhv")
+text = "SIM"
