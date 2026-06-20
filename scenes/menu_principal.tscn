@@ -1,0 +1,150 @@
+[gd_scene load_steps=17 format=3 uid="uid://btutaj2m8gduf"]
+
+[ext_resource type="Texture2D" uid="uid://47h52imnfl0f" path="res://assets/backgrounds/green_background.png" id="1_2xgxd"]
+[ext_resource type="FontFile" uid="uid://c7kk8scqhpcmo" path="res://assets/fonts/Inter-VariableFont_opsz,wght.ttf" id="2_8k4fm"]
+[ext_resource type="Script" uid="uid://b5cvtcvpy0bbw" path="res://scenes/MenuPrincipal.gd" id="2_lgh5n"]
+[ext_resource type="StyleBox" uid="uid://ea1dkbu8ggrt" path="res://assets/textures/menu_button_iniciar.tres" id="3_lgh5n"]
+[ext_resource type="StyleBox" uid="uid://2wp7hs7av04c" path="res://assets/textures/menu_button_iniciar_pressionado.tres" id="4_jaljy"]
+[ext_resource type="StyleBox" uid="uid://cr26erkd22gjd" path="res://assets/textures/menu_button_iniciar_hover.tres" id="5_hucf5"]
+[ext_resource type="PackedScene" uid="uid://byfkl0tc6nyyk" path="res://scenes/style_buttons.tscn" id="6_qswqd"]
+[ext_resource type="Texture2D" uid="uid://baf0vxww3c1ey" path="res://assets/textures/about_button.png" id="7_u72up"]
+[ext_resource type="Texture2D" uid="uid://dyl87ao41vcwm" path="res://assets/textures/exit_button.png" id="8_tpt6j"]
+
+[sub_resource type="FontVariation" id="FontVariation_e7foa"]
+base_font = ExtResource("2_8k4fm")
+variation_opentype = {
+1869640570: 14,
+2003265652: 800
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_e7foa"]
+font = SubResource("FontVariation_e7foa")
+font_size = 64
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="FontVariation" id="FontVariation_8ntpf"]
+base_font = ExtResource("2_8k4fm")
+variation_opentype = {
+1869640570: 14,
+2003265652: 700
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_8ntpf"]
+font = SubResource("FontVariation_8ntpf")
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="FontVariation" id="FontVariation_dlmtt"]
+base_font = ExtResource("2_8k4fm")
+
+[sub_resource type="LabelSettings" id="LabelSettings_bw24t"]
+font = SubResource("FontVariation_dlmtt")
+font_size = 24
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="FontVariation" id="FontVariation_hm4yg"]
+base_font = ExtResource("2_8k4fm")
+variation_opentype = {
+1869640570: 14,
+2003265652: 800
+}
+
+[node name="TextureRect" type="TextureRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+texture = ExtResource("1_2xgxd")
+expand_mode = 2
+stretch_mode = 2
+script = ExtResource("2_lgh5n")
+
+[node name="MarginControl_menu" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 65
+theme_override_constants/margin_bottom = 35
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginControl_menu"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="titulo" type="Label" parent="MarginControl_menu/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "EcoCity Quest"
+label_settings = SubResource("LabelSettings_e7foa")
+
+[node name="subtitulo" type="Label" parent="MarginControl_menu/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "Simulador de Cidades Sustentáveis"
+label_settings = SubResource("LabelSettings_8ntpf")
+
+[node name="descricao" type="Label" parent="MarginControl_menu"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "Tome as decisões corretas para que sua cidade seja sustentável e bonita de se viver."
+label_settings = SubResource("LabelSettings_bw24t")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="iniciar_button" type="Button" parent="MarginControl_menu"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_hm4yg")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = ExtResource("3_lgh5n")
+theme_override_styles/pressed = ExtResource("4_jaljy")
+theme_override_styles/hover = ExtResource("5_hucf5")
+text = "INICIAR"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -190.0
+offset_bottom = 60.0
+grow_horizontal = 0
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="vol_button" parent="MarginContainer/HBoxContainer" instance=ExtResource("6_qswqd")]
+layout_mode = 2
+theme_override_constants/icon_max_width = 50
+
+[node name="about_button" parent="MarginContainer/HBoxContainer" instance=ExtResource("6_qswqd")]
+layout_mode = 2
+theme_override_constants/icon_max_width = 50
+icon = ExtResource("7_u72up")
+
+[node name="exit_button" parent="MarginContainer/HBoxContainer" instance=ExtResource("6_qswqd")]
+layout_mode = 2
+theme_override_constants/icon_max_width = 50
+icon = ExtResource("8_tpt6j")
+
+[connection signal="pressed" from="MarginControl_menu/iniciar_button" to="." method="_on_iniciar_button_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/about_button" to="." method="_on_about_button_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/exit_button" to="." method="_on_exit_button_pressed"]
+
+[editable path="MarginContainer/HBoxContainer/vol_button"]
+[editable path="MarginContainer/HBoxContainer/about_button"]
+[editable path="MarginContainer/HBoxContainer/exit_button"]
