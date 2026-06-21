@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://ymyqqqjrfmy0" path="res://Fotos/8947fb72b08a69bca952e4c77b909509.jpg" id="2_pmimx"]
 [ext_resource type="Texture2D" uid="uid://cchki12mqfkip" path="res://Fotos/Estrada.png" id="3_pmimx"]
 [ext_resource type="Script" uid="uid://cs2t2xmpts1om" path="res://Fase2/Exercicio2/imagem_rua.gd" id="4_nsbix"]
-[ext_resource type="Texture2D" uid="uid://bwtua5dcxqdpi" path="res://Fotos/WhatsApp Image 2026-06-15 at 14.47.03.jpeg" id="4_vqyp2"]
 [ext_resource type="Texture2D" uid="uid://b1yb5rf6vjgfe" path="res://Fotos/Ellipse 1.png" id="5_pmimx"]
 [ext_resource type="Texture2D" uid="uid://bja784sqcjdci" path="res://Fotos/Botão voltar.png" id="5_vqyp2"]
 [ext_resource type="Texture2D" uid="uid://b1oakg46gcsd3" path="res://Fotos/Botão ajuda.png" id="6_uv6cm"]
@@ -30,6 +29,7 @@ variation_opentype = {
 font = SubResource("FontVariation_ajvrd")
 font_size = 64
 font_color = Color(0, 0, 0, 1)
+outline_size = 12
 
 [sub_resource type="FontVariation" id="FontVariation_ymime"]
 base_font = ExtResource("10_2v2sb")
@@ -40,8 +40,9 @@ variation_opentype = {
 
 [sub_resource type="LabelSettings" id="LabelSettings_7luvq"]
 font = SubResource("FontVariation_ymime")
-font_size = 28
+font_size = 40
 font_color = Color(0, 0, 0, 1)
+outline_size = 10
 
 [node name="ConserteARua_tscn" type="Control" unique_id=2094786293]
 layout_mode = 3
@@ -76,24 +77,14 @@ alignment = 1
 
 [node name="ImagemRua" type="TextureRect" parent="." unique_id=173728944]
 layout_mode = 0
-offset_left = -13.0
-offset_top = 126.0
-offset_right = 1153.0
-offset_bottom = 816.0
+offset_top = 124.0
+offset_right = 1160.0
+offset_bottom = 814.0
 mouse_filter = 0
 texture = ExtResource("3_pmimx")
 expand_mode = 1
 stretch_mode = 5
 script = ExtResource("4_nsbix")
-
-[node name="TextureRect2" type="TextureRect" parent="." unique_id=628145231]
-layout_mode = 0
-offset_left = 78.0
-offset_top = 60.0
-offset_right = 939.0
-offset_bottom = 292.0
-texture = ExtResource("4_vqyp2")
-expand_mode = 1
 
 [node name="CronometroVisual" type="TextureRect" parent="." unique_id=1533109055]
 layout_mode = 1
@@ -148,10 +139,9 @@ expand_mode = 1
 
 [node name="Titulo" type="Label" parent="." unique_id=901755293]
 layout_mode = 0
-offset_left = 20.0
-offset_top = 68.0
-offset_right = 980.0
-offset_bottom = 146.0
+offset_top = 20.0
+offset_right = 1159.0
+offset_bottom = 98.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("SystemFont_r33x4")
 theme_override_font_sizes/font_size = 58
@@ -162,10 +152,10 @@ autowrap_mode = 2
 
 [node name="Descricao" type="Label" parent="." unique_id=1486210848]
 layout_mode = 0
-offset_left = 155.0
-offset_top = 151.0
-offset_right = 907.0
-offset_bottom = 224.0
+offset_left = 129.5
+offset_top = 100.0
+offset_right = 1029.5
+offset_bottom = 201.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 31

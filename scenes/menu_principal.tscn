@@ -21,6 +21,7 @@ variation_opentype = {
 font = SubResource("FontVariation_e7foa")
 font_size = 64
 font_color = Color(0, 0, 0, 1)
+outline_size = 12
 
 [sub_resource type="FontVariation" id="FontVariation_8ntpf"]
 base_font = ExtResource("2_8k4fm")
@@ -33,6 +34,7 @@ variation_opentype = {
 font = SubResource("FontVariation_8ntpf")
 font_size = 32
 font_color = Color(0, 0, 0, 1)
+outline_size = 8
 
 [sub_resource type="FontVariation" id="FontVariation_dlmtt"]
 base_font = ExtResource("2_8k4fm")
@@ -41,6 +43,7 @@ base_font = ExtResource("2_8k4fm")
 font = SubResource("FontVariation_dlmtt")
 font_size = 24
 font_color = Color(0, 0, 0, 1)
+outline_size = 4
 
 [sub_resource type="FontVariation" id="FontVariation_hm4yg"]
 base_font = ExtResource("2_8k4fm")
@@ -105,6 +108,8 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 8
 theme_override_fonts/font = SubResource("FontVariation_hm4yg")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = ExtResource("3_lgh5n")

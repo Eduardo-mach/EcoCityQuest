@@ -3,9 +3,9 @@
 [ext_resource type="Script" uid="uid://coxprr0phvkl" path="res://Fase2/Exercicio1/tela_caca_palavras.gd" id="1_pbs4g"]
 [ext_resource type="Texture2D" uid="uid://ymyqqqjrfmy0" path="res://Fotos/8947fb72b08a69bca952e4c77b909509.jpg" id="2_y0aah"]
 [ext_resource type="Texture2D" uid="uid://bja784sqcjdci" path="res://Fotos/Botão voltar.png" id="3_pbs4g"]
-[ext_resource type="Texture2D" uid="uid://56nogm1m2wg7" path="res://Fotos/images (1).jpg" id="3_y0aah"]
 [ext_resource type="Texture2D" uid="uid://b1yb5rf6vjgfe" path="res://Fotos/Ellipse 1.png" id="4_pbs4g"]
 [ext_resource type="Texture2D" uid="uid://b1oakg46gcsd3" path="res://Fotos/Botão ajuda.png" id="4_y0aah"]
+[ext_resource type="Texture2D" uid="uid://56nogm1m2wg7" path="res://Fotos/images (1).jpg" id="7_3d23e"]
 [ext_resource type="FontFile" uid="uid://c7kk8scqhpcmo" path="res://assets/fonts/Inter-VariableFont_opsz,wght.ttf" id="7_vqkkh"]
 
 [sub_resource type="FontVariation" id="FontVariation_3d23e"]
@@ -19,11 +19,13 @@ variation_opentype = {
 font = SubResource("FontVariation_3d23e")
 font_size = 64
 font_color = Color(0, 0, 0, 1)
+outline_size = 12
 
 [sub_resource type="LabelSettings" id="LabelSettings_1lmw3"]
 font = ExtResource("7_vqkkh")
-font_size = 28
+font_size = 40
 font_color = Color(0, 0, 0, 1)
+outline_size = 8
 
 [node name="CacaPalavras" type="Control" unique_id=849332783]
 layout_mode = 3
@@ -39,16 +41,8 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 0
 offset_right = 1088.0
 offset_bottom = 717.0
+scale = Vector2(1, 1.0063139)
 texture = ExtResource("2_y0aah")
-expand_mode = 1
-
-[node name="FundoCinza2" type="TextureRect" parent="." unique_id=1001246838]
-layout_mode = 0
-offset_left = 46.0
-offset_top = 244.0
-offset_right = 331.0
-offset_bottom = 453.0
-texture = ExtResource("3_y0aah")
 expand_mode = 1
 
 [node name="MarginContainer_Jogo" type="MarginContainer" parent="." unique_id=734157819]
@@ -66,15 +60,6 @@ layout_mode = 2
 
 [node name="PainelPalavra" type="TextureRect" parent="MarginContainer_Jogo/HBoxContainer_Conteudo" unique_id=238109984]
 layout_mode = 2
-
-[node name="FundoCinza" type="TextureRect" parent="." unique_id=1659202755]
-layout_mode = 0
-offset_left = 19.0
-offset_top = 59.0
-offset_right = 1072.0
-offset_bottom = 214.0
-texture = ExtResource("3_y0aah")
-expand_mode = 1
 
 [node name="CronometroVisua" type="TextureRect" parent="." unique_id=1037485228]
 layout_mode = 0
@@ -114,10 +99,9 @@ texture_normal = ExtResource("4_y0aah")
 
 [node name="Titulo" type="Label" parent="." unique_id=1970349874]
 layout_mode = 0
-offset_left = 65.0
-offset_top = 72.0
-offset_right = 1047.0
-offset_bottom = 158.0
+offset_top = 20.0
+offset_right = 1088.0
+offset_bottom = 98.0
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 55
@@ -128,53 +112,73 @@ vertical_alignment = 1
 
 [node name="Descricao" type="Label" parent="." unique_id=1215803085]
 layout_mode = 0
-offset_left = 91.0
-offset_top = 144.0
-offset_right = 1034.0
-offset_bottom = 193.0
+offset_left = 129.0
+offset_top = 100.0
+offset_right = 1029.0
+offset_bottom = 201.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 31
 text = "Procure as palavras com que você se deparou ao longo das atividades."
 label_settings = SubResource("LabelSettings_1lmw3")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1481370957]
+layout_mode = 0
+offset_left = 63.76033
+offset_top = 239.9743
+offset_right = 103.76033
+offset_bottom = 279.9743
+scale = Vector2(5.6199317, 5.886937)
+texture = ExtResource("7_3d23e")
+expand_mode = 1
 
 [node name="Label_EOLICA" type="Label" parent="." unique_id=226290856]
 layout_mode = 0
 offset_left = 95.0
-offset_top = 276.0
-offset_right = 189.0
-offset_bottom = 313.0
+offset_top = 260.0
+offset_right = 258.0
+offset_bottom = 315.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 27
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 40
 text = "- EÓLICA"
 
 [node name="Label_SOLAR" type="Label" parent="." unique_id=983306584]
 layout_mode = 0
 offset_left = 95.0
-offset_top = 307.0
+offset_top = 298.0
 offset_right = 351.0
-offset_bottom = 344.0
+offset_bottom = 353.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 27
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 40
 text = "- SOLAR"
 
 [node name="Label_REUSO" type="Label" parent="." unique_id=1082073999]
 layout_mode = 0
 offset_left = 94.0
-offset_top = 343.0
+offset_top = 335.0
 offset_right = 281.0
-offset_bottom = 380.0
+offset_bottom = 390.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 27
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 40
 text = "- REUSO"
 
 [node name="Label_ECO" type="Label" parent="." unique_id=68185932]
 layout_mode = 0
-offset_left = 98.0
-offset_top = 379.0
-offset_right = 151.0
-offset_bottom = 416.0
+offset_left = 94.0
+offset_top = 376.0
+offset_right = 197.0
+offset_bottom = 431.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 27
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 40
 text = "- ECO"
 
 [node name="GridContainer_Matriz" type="GridContainer" parent="." unique_id=1280402117]
