@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://56nogm1m2wg7"
-path="res://.godot/imported/images (1).jpg-408052bde2ff9ce23d40c606cd60bf85.ctex"
+uid="uid://7ou82cc5x18e"
+path="res://.godot/imported/verso_carta.png-e9b9eb2052b6ccb5356295950f46ffae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Fotos e Videos/images (1).jpg"
-dest_files=["res://.godot/imported/images (1).jpg-408052bde2ff9ce23d40c606cd60bf85.ctex"]
+source_file="res://Fotos e Videos/verso_carta.png"
+dest_files=["res://.godot/imported/verso_carta.png-e9b9eb2052b6ccb5356295950f46ffae.ctex"]
 
 [params]
 

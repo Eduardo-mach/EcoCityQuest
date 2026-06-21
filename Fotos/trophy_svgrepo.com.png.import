@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://brjhoyppa02f6"
-path="res://.godot/imported/trophy_svgrepo.com.png-ed97224ad02650dcbf786b17c7e100d4.ctex"
+path="res://.godot/imported/trophy_svgrepo.com.png-66ae841160f61e0a3d30577cf35035b3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Fotos/trophy_svgrepo.com.png"
-dest_files=["res://.godot/imported/trophy_svgrepo.com.png-ed97224ad02650dcbf786b17c7e100d4.ctex"]
+source_file="res://Fotos e Videos/trophy_svgrepo.com.png"
+dest_files=["res://.godot/imported/trophy_svgrepo.com.png-66ae841160f61e0a3d30577cf35035b3.ctex"]
 
 [params]
 

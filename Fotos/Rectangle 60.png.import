@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d11ks61rpriro"
-path="res://.godot/imported/Rectangle 60.png-683c36b755089a2757f9accf20cc11e4.ctex"
+path="res://.godot/imported/Rectangle 60.png-bcc25f5991b2577ef31751ac4b53a272.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Fotos/Rectangle 60.png"
-dest_files=["res://.godot/imported/Rectangle 60.png-683c36b755089a2757f9accf20cc11e4.ctex"]
+source_file="res://Fotos e Videos/Rectangle 60.png"
+dest_files=["res://.godot/imported/Rectangle 60.png-bcc25f5991b2577ef31751ac4b53a272.ctex"]
 
 [params]
 

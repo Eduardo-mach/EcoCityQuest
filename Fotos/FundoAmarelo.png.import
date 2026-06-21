@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://pstthqphedjr"
-path="res://.godot/imported/FundoAmarelo.png-1269bde1a66cd7c1ca6be95038f26e01.ctex"
+path="res://.godot/imported/FundoAmarelo.png-615c2c401232f82db3022be3346a0fc0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Fotos/FundoAmarelo.png"
-dest_files=["res://.godot/imported/FundoAmarelo.png-1269bde1a66cd7c1ca6be95038f26e01.ctex"]
+source_file="res://Fotos e Videos/FundoAmarelo.png"
+dest_files=["res://.godot/imported/FundoAmarelo.png-615c2c401232f82db3022be3346a0fc0.ctex"]
 
 [params]
 

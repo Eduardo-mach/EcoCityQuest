@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c7vtt6q4edtru"
-path="res://.godot/imported/trofeu.png-5b2873901d0724818e9e334e160e9401.ctex"
+path="res://.godot/imported/trofeu.png-85e52b79fcc2429731140db072574bf8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Fotos/trofeu.png"
-dest_files=["res://.godot/imported/trofeu.png-5b2873901d0724818e9e334e160e9401.ctex"]
+source_file="res://Fotos e Videos/trofeu.png"
+dest_files=["res://.godot/imported/trofeu.png-85e52b79fcc2429731140db072574bf8.ctex"]
 
 [params]
 
