@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://mmcwb8t37cdx"]
+[gd_scene load_steps=16 format=3 uid="uid://mmcwb8t37cdx"]
 
 [ext_resource type="Script" uid="uid://vnif12eeqr1s" path="res://Fase1/JogoTelhado/Fase1Exercicio2.gd" id="1_p40mu"]
 [ext_resource type="Script" uid="uid://cmklottfd3prn" path="res://Fase1/JogoTelhado/LogicaFase1Exercicio2.gd" id="2_uholv"]
@@ -8,8 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://dg73ne7bdahpx" path="res://assets/casa.svg" id="5_wpicf"]
 [ext_resource type="Texture2D" uid="uid://fsoraw3yuj62" path="res://assets/painel.png" id="6_wpicf"]
 [ext_resource type="Texture2D" uid="uid://bcayd0gyr01fm" path="res://assets/lixo.png" id="8_p1q0i"]
-[ext_resource type="Texture2D" uid="uid://bja784sqcjdci" path="res://Fotos/Botão voltar.png" id="9_vhf6y"]
-[ext_resource type="Texture2D" uid="uid://b1oakg46gcsd3" path="res://Fotos/Botão ajuda.png" id="10_xtto8"]
+[ext_resource type="Texture2D" uid="uid://bja784sqcjdci" path="res://Fotos/Bot#U251c#U00fao voltar.png" id="9_vhf6y"]
+[ext_resource type="Texture2D" uid="uid://b1oakg46gcsd3" path="res://Fotos/Bot#U251c#U00fao ajuda.png" id="10_xtto8"]
 [ext_resource type="Texture2D" uid="uid://b1yb5rf6vjgfe" path="res://Fotos/Ellipse 1.png" id="11_wpicf"]
 
 [sub_resource type="FontVariation" id="FontVariation_8ctea"]
@@ -32,7 +32,7 @@ font = SubResource("FontVariation_tbony")
 font_size = 32
 font_color = Color(0, 0, 0, 1)
 
-[node name="JogoTelhado" type="Control" unique_id=175800719]
+[node name="JogoTelhado" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -43,32 +43,32 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_p40mu")
 
-[node name="LogicaExercicio" type="Node" parent="." unique_id=2020759657]
+[node name="LogicaExercicio" type="Node" parent="."]
 script = ExtResource("2_uholv")
 
-[node name="TimerExercicio" type="Timer" parent="LogicaExercicio" unique_id=1468711511]
+[node name="TimerExercicio" type="Timer" parent="LogicaExercicio"]
 
-[node name="LabelTimer" type="Label" parent="LogicaExercicio/TimerExercicio" unique_id=1755444]
+[node name="LabelTimer" type="Label" parent="LogicaExercicio/TimerExercicio"]
 offset_left = 1012.0
 offset_top = 140.0
 offset_right = 1052.0
 offset_bottom = 163.0
 
-[node name="Fundo" type="TextureRect" parent="." unique_id=1261219767]
+[node name="Fundo" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.731
 anchor_bottom = 1.026
 offset_top = 2.0
-offset_right = 4.4470215
-offset_bottom = 72.112
+offset_right = -64.55298
+offset_bottom = 9.1119995
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_wpicf")
 expand_mode = 1
 stretch_mode = 1
 
-[node name="FundoCinza" type="ColorRect" parent="." unique_id=1972057083]
+[node name="FundoCinza" type="ColorRect" parent="."]
 layout_mode = 0
 offset_left = 79.0
 offset_top = 16.0
@@ -76,7 +76,7 @@ offset_right = 1033.0
 offset_bottom = 209.0
 color = Color(1, 0.87058824, 0.29803923, 1)
 
-[node name="Titulo" type="Label" parent="." unique_id=276938433]
+[node name="Titulo" type="Label" parent="."]
 layout_mode = 0
 offset_left = 69.0
 offset_top = 18.0
@@ -91,7 +91,7 @@ label_settings = SubResource("LabelSettings_h40go")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Descricao" type="Label" parent="." unique_id=252750497]
+[node name="Descricao" type="Label" parent="."]
 layout_mode = 0
 offset_left = 107.0
 offset_top = 114.0
@@ -104,7 +104,7 @@ do telhado desta casa."
 label_settings = SubResource("LabelSettings_03wt5")
 horizontal_alignment = 1
 
-[node name="Casa" type="TextureRect" parent="." unique_id=1724159825]
+[node name="Casa" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = 283.0
 offset_top = 182.0
@@ -114,7 +114,7 @@ texture = ExtResource("5_wpicf")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="DropTelhado" type="Control" parent="." unique_id=1703774121]
+[node name="DropTelhado" type="Control" parent="."]
 anchors_preset = 0
 offset_left = 506.0
 offset_top = 236.99998
@@ -123,7 +123,7 @@ offset_bottom = 369.6584
 rotation = -0.0034412667
 scale = Vector2(0.9912348, 0.9374878)
 
-[node name="ItemPlacaSolar" type="TextureRect" parent="." unique_id=2120818917]
+[node name="ItemPlacaSolar" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = 213.0
 offset_top = 509.00006
@@ -136,7 +136,7 @@ stretch_mode = 5
 script = ExtResource("5_qm2dm")
 nome_objeto = "placa_solar"
 
-[node name="ItemEntulho" type="TextureRect" parent="." unique_id=1288939357]
+[node name="ItemEntulho" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = 576.0
 offset_top = 511.0
@@ -148,7 +148,7 @@ stretch_mode = 5
 script = ExtResource("5_qm2dm")
 nome_objeto = "entulho"
 
-[node name="BotaoVoltar" type="TextureButton" parent="." unique_id=497669217]
+[node name="BotaoVoltar" type="TextureButton" parent="."]
 layout_mode = 0
 offset_left = 1001.0
 offset_top = 173.0
@@ -158,7 +158,7 @@ texture_normal = ExtResource("9_vhf6y")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="BotaoAjuda" type="TextureButton" parent="." unique_id=1650233043]
+[node name="BotaoAjuda" type="TextureButton" parent="."]
 layout_mode = 0
 offset_left = 993.0
 offset_top = 116.0
@@ -168,11 +168,11 @@ texture_normal = ExtResource("10_xtto8")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="CronometroVisua" type="TextureRect" parent="." unique_id=478328325]
+[node name="CronometroVisua" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 966.00006
-offset_top = 236.99998
-offset_right = 1120.0
+offset_left = 981.00006
+offset_top = 237.0
+offset_right = 1135.0
 offset_bottom = 364.21234
 scale = Vector2(0.561266, 0.5972899)
 texture = ExtResource("11_wpicf")

@@ -40,7 +40,7 @@ func _criar_popup_video() -> void:
 	video_player.expand = true
 	video_player.size = tamanho_video
 	video_player.position = pos_centralizada
-	video_player.stream = load("res://Fotos e Videos/Tutorial02.ogv")
+	video_player.stream = load("res://Fotos/Tutorial02.ogv")
 	video_player.finished.connect(_on_video_finalizado)
 	popup_video.add_child(video_player)
 
