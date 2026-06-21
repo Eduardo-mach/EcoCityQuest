@@ -9,7 +9,7 @@ func _ready() -> void:
 
 func _on_button_pressed() -> void:
 	tela_video.visible = true
-	video_player.stream = load("res://Fotos e Videos/Tutorial03.ogv")
+	video_player.stream = load("res://Fotos/Tutorial03.ogv")
 	video_player.play()
 
 func _on_video_finished() -> void:
