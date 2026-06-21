@@ -114,7 +114,7 @@ func _criar_popup_video() -> void:
 
 	video_player = VideoStreamPlayer.new()
 	video_player.custom_minimum_size = Vector2(560, 350)
-	video_player.stream = load("res://Fotos e Videos/Tutorial01.ogv")
+	video_player.stream = load("res://Fotos/Tutorial01.ogv")
 	video_player.finished.connect(_on_video_finalizado)
 	vbox.add_child(video_player)
 

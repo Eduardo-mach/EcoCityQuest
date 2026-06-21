@@ -8,8 +8,6 @@ signal jogo_da_memoria_concluido
 signal resultado_jogada(resultado) # emitido após escolher_carta() processar (inclui casos com delay)
 
 # Banco de dados das cartas (Imagens ecológicas reais)
-# O frontend usará esses nomes para carregar as imagens correspondentes
-# (ex: res://assets/imagens/carta_<nome>.png)
 var lista_itens_ecologicos: Array = [
 	"arvore_nativa",
 	"painel_solar",
@@ -42,49 +40,52 @@ func inicializar_jogo() -> Array:
 	cartas_tabuleiro.shuffle()
 	return cartas_tabuleiro
 
-# Função principal que o frontend chama quando o aluno clica em uma carta.
-# OBS: como pode haver um delay (await) no caso de erro, o resultado também
-# é emitido pelo sinal "resultado_jogada", além de ser retornado.
+# Função principal chamada quando o aluno clica em uma carta
 func escolher_carta(posicao_index: int) -> Dictionary:
 	# Evita cliques repetidos na mesma carta ou se já houver duas cartas sendo checadas
 	if posicao_index == carta_selecionada_1 or carta_selecionada_2 != -1:
 		var resultado_ignorado = {"status": "ignorado"}
+		emit_signal("resultado_jogada", resultado_ignorado)
 		return resultado_ignorado
 
 	if carta_selecionada_1 == -1:
+		# Primeira carta
 		carta_selecionada_1 = posicao_index
 		var resultado = {"status": "primeira_carta", "item": cartas_tabuleiro[posicao_index]}
 		emit_signal("resultado_jogada", resultado)
 		return resultado
 	else:
+		# Segunda carta
 		carta_selecionada_2 = posicao_index
 		var item1 = cartas_tabuleiro[carta_selecionada_1]
 		var item2 = cartas_tabuleiro[carta_selecionada_2]
 
-		# Se os nomes forem iguais, temos um par ecológico
+		# 🔑 Emitir resultado da segunda carta para o frontend revelar
+		var resultado_segunda = {"status": "segunda_carta", "item": item2}
+		emit_signal("resultado_jogada", resultado_segunda)
+
+		# Comparação
 		if item1 == item2:
 			pares_descobertos += 1
 			emit_signal("par_encontrado", item1)
 
-			# Reseta a seleção para a próxima tentativa
 			_resetar_selecao()
 
 			var resultado = {"status": "acertou", "item": item1}
 			emit_signal("resultado_jogada", resultado)
 
-			# Verifica se o aluno limpou o tabuleiro
+			# Verifica se o tabuleiro foi concluído
 			if pares_descobertos == total_pares:
 				emit_signal("jogo_da_memoria_concluido")
-				# Avisa o gerenciador geral para avançar de fase
 				if ResourceLoader.exists("res://scripts/GerenciadorJogo.gd"):
 					get_node("/root/GerenciadorJogo").avancar_exercicio()
 
 			return resultado
 		else:
-			# Se errou, avisa o frontend para desvirar as duas cartas
+			# Erro: avisa o frontend para desvirar as duas cartas
 			emit_signal("par_errado", carta_selecionada_1, carta_selecionada_2)
 
-			# Pequeno delay para o jogador ver a segunda carta antes de resetar
+			# Delay para o jogador ver a segunda carta
 			var timer = get_tree().create_timer(1.0)
 			await timer.timeout
 
