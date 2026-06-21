@@ -74,6 +74,8 @@ offset_top = 254.0
 offset_right = 753.0
 offset_bottom = 373.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 12
 theme_override_font_sizes/font_size = 87
 text = "PARABÉNS"
 
@@ -84,6 +86,8 @@ offset_top = 361.0
 offset_right = 858.0
 offset_bottom = 562.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 47
 text = "Você finalizou o Exercício 1
 "
@@ -114,5 +118,7 @@ offset_top = 437.0
 offset_right = 467.0
 offset_bottom = 502.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 47
 text = "Pontução:"
