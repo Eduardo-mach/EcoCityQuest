@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://p4mkt5me60kl"
-path="res://.godot/imported/titulo_jogo_memoria.png-e2d1d7a1407c4afee87d722efd11e25f.ctex"
+uid="uid://d0k67nawpdji3"
+path="res://.godot/imported/icone_ajuda.png-9eea920392602cade7e171472aabf1c1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Fase1/JogoMemoria/assets/imagens/titulo_jogo_memoria.png"
-dest_files=["res://.godot/imported/titulo_jogo_memoria.png-e2d1d7a1407c4afee87d722efd11e25f.ctex"]
+source_file="res://assets/icone_ajuda.png"
+dest_files=["res://.godot/imported/icone_ajuda.png-9eea920392602cade7e171472aabf1c1.ctex"]
 
 [params]
 

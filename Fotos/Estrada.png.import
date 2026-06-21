@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cchki12mqfkip"
-path="res://.godot/imported/Estrada.png-d104f49b6f46570c1cf99ea68e77b851.ctex"
+path="res://.godot/imported/Estrada.png-0f54e92658f5909e5e3f1209063fac9b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Fotos e Videos/Estrada.png"
-dest_files=["res://.godot/imported/Estrada.png-d104f49b6f46570c1cf99ea68e77b851.ctex"]
+source_file="res://Fotos/Estrada.png"
+dest_files=["res://.godot/imported/Estrada.png-0f54e92658f5909e5e3f1209063fac9b.ctex"]
 
 [params]
 

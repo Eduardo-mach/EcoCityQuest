@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ddiq5ulpgsoiw"
-path="res://.godot/imported/carta_lixeira_reciclagem.png-4f0d477f4db8f13c3da0bc59013b8292.ctex"
+uid="uid://drlls3f8vvt8m"
+path="res://.godot/imported/carta_painel_solar.png-2251e6e2e4861a011db817fe86265fce.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Fase1/JogoMemoria/assets/imagens/carta_lixeira_reciclagem.png"
-dest_files=["res://.godot/imported/carta_lixeira_reciclagem.png-4f0d477f4db8f13c3da0bc59013b8292.ctex"]
+source_file="res://assets/carta_painel_solar.png"
+dest_files=["res://.godot/imported/carta_painel_solar.png-2251e6e2e4861a011db817fe86265fce.ctex"]
 
 [params]
 

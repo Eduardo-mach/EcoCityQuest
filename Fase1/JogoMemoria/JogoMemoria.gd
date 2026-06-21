@@ -9,15 +9,15 @@ const SCRIPT_CARTA = preload("res://Fase1/JogoMemoria/CartaMemoria.gd")
 @onready var timer: Timer = get_node_or_null("TimerExercicio") as Timer
 @onready var label_timer: Label = get_node_or_null("LabelTimer") as Label
 
-var textura_verso: Texture2D = preload("res://Fotos e Videos/verso_carta.png")
+var textura_verso: Texture2D = preload("res://assets/verso_carta.png")
 
 var texturas_frente: Dictionary = {
-	"arvore_nativa": preload("res://Fotos e Videos/carta_arvore_nativa.png"),
-	"painel_solar": preload("res://Fotos e Videos/carta_painel_solar.png"),
-	"lixeira_reciclagem": preload("res://Fotos e Videos/carta_lixeira_reciclagem.png"),
-	"bici_compartilhada": preload("res://Fotos e Videos/carta_bici_compartilhada.png"),
-	"carro_eletrico": preload("res://Fotos e Videos/carta_carro_eletrico.png"),
-	"horta_comunitaria": preload("res://Fotos e Videos/carta_horta_comunitaria.png"),
+	"arvore_nativa": preload("res://assets/carta_arvore_nativa.png"),
+	"painel_solar": preload("res://assets/carta_painel_solar.png"),
+	"lixeira_reciclagem": preload("res://assets/carta_lixeira_reciclagem.png"),
+	"bici_compartilhada": preload("res://assets/carta_bici_compartilhada.png"),
+	"carro_eletrico": preload("res://assets/carta_carro_eletrico.png"),
+	"horta_comunitaria": preload("res://assets/carta_horta_comunitaria.png"),
 }
 
 var cartas: Array = []

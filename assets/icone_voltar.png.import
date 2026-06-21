@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ceonicet6pqns"
-path="res://.godot/imported/carta_horta_comunitaria.png-2264a9142c73544e1b0fdcbb63f0135e.ctex"
+uid="uid://ce8g48e1dgqma"
+path="res://.godot/imported/icone_voltar.png-033b1f57b6a0e69e9da51768dd51280a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Fase1/JogoMemoria/assets/imagens/carta_horta_comunitaria.png"
-dest_files=["res://.godot/imported/carta_horta_comunitaria.png-2264a9142c73544e1b0fdcbb63f0135e.ctex"]
+source_file="res://assets/icone_voltar.png"
+dest_files=["res://.godot/imported/icone_voltar.png-033b1f57b6a0e69e9da51768dd51280a.ctex"]
 
 [params]
 

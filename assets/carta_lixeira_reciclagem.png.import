@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2hnuv6onphhm"
-path="res://.godot/imported/fundo_padrao.png-f60cf29328e7e0a948dd0282e053c4cf.ctex"
+uid="uid://ddiq5ulpgsoiw"
+path="res://.godot/imported/carta_lixeira_reciclagem.png-65c9c9954b2791458461cf168ddcd252.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Fase1/JogoMemoria/assets/imagens/fundo_padrao.png"
-dest_files=["res://.godot/imported/fundo_padrao.png-f60cf29328e7e0a948dd0282e053c4cf.ctex"]
+source_file="res://assets/carta_lixeira_reciclagem.png"
+dest_files=["res://.godot/imported/carta_lixeira_reciclagem.png-65c9c9954b2791458461cf168ddcd252.ctex"]
 
 [params]
 

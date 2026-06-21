@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://esf8feeie6kn"
-path="res://.godot/imported/carta_arvore_nativa.png-057318e19381c34075daacb2dec2184d.ctex"
+path="res://.godot/imported/carta_arvore_nativa.png-71a6a36c77a7baeb05a112bec96de5e0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Fotos e Videos/carta_arvore_nativa.png"
-dest_files=["res://.godot/imported/carta_arvore_nativa.png-057318e19381c34075daacb2dec2184d.ctex"]
+source_file="res://Fotos/carta_arvore_nativa.png"
+dest_files=["res://.godot/imported/carta_arvore_nativa.png-71a6a36c77a7baeb05a112bec96de5e0.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ck8pubejax8t"
-path="res://.godot/imported/rua_lisa.png-2010db6a47bc9ae8f0f069185026f326.ctex"
+path="res://.godot/imported/rua_lisa.png-3d4a732cbff621e1ac7c6e638438230a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Fotos e Videos/rua_lisa.png"
-dest_files=["res://.godot/imported/rua_lisa.png-2010db6a47bc9ae8f0f069185026f326.ctex"]
+source_file="res://Fotos/rua_lisa.png"
+dest_files=["res://.godot/imported/rua_lisa.png-3d4a732cbff621e1ac7c6e638438230a.ctex"]
 
 [params]
 

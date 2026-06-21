@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://iw6j217nv853"
-path="res://.godot/imported/PAINEL.png-6eeaeb94a153105cf7ef5ee232121afa.ctex"
+path="res://.godot/imported/PAINEL.png-7399374548dabb9cf86796b88eccb055.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Fotos e Videos/PAINEL.png"
-dest_files=["res://.godot/imported/PAINEL.png-6eeaeb94a153105cf7ef5ee232121afa.ctex"]
+source_file="res://Fotos/PAINEL.png"
+dest_files=["res://.godot/imported/PAINEL.png-7399374548dabb9cf86796b88eccb055.ctex"]
 
 [params]
 

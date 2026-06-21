@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dc7gql5kgypl7"
-path="res://.godot/imported/carta_horta_comunitaria.png-914997d0efa9bab29d0dfbaf96390fe7.ctex"
+path="res://.godot/imported/carta_horta_comunitaria.png-e04ce0cf58ffb66ad03c2bddfa64632d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Fotos e Videos/carta_horta_comunitaria.png"
-dest_files=["res://.godot/imported/carta_horta_comunitaria.png-914997d0efa9bab29d0dfbaf96390fe7.ctex"]
+source_file="res://Fotos/carta_horta_comunitaria.png"
+dest_files=["res://.godot/imported/carta_horta_comunitaria.png-e04ce0cf58ffb66ad03c2bddfa64632d.ctex"]
 
 [params]
 

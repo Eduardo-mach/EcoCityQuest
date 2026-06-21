@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bd016hxbpvy3m"
-path="res://.godot/imported/cone.png-f5979c526c9aa880f774ffc0386c8bb8.ctex"
+path="res://.godot/imported/cone.png-2a0ee468743539a8f2c25350e72c6475.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Fotos e Videos/cone.png"
-dest_files=["res://.godot/imported/cone.png-f5979c526c9aa880f774ffc0386c8bb8.ctex"]
+source_file="res://Fotos/cone.png"
+dest_files=["res://.godot/imported/cone.png-2a0ee468743539a8f2c25350e72c6475.ctex"]
 
 [params]
 

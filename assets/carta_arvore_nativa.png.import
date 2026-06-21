@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bewayjtcyal6v"
-path="res://.godot/imported/carta_bici_compartilhada.png-cf08e04b56897740ec121f8a67ba9f50.ctex"
+uid="uid://bnpd4eiv2ci5h"
+path="res://.godot/imported/carta_arvore_nativa.png-778bb54b43fdfbb99ec68ff42cfc633d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Fase1/JogoMemoria/assets/imagens/carta_bici_compartilhada.png"
-dest_files=["res://.godot/imported/carta_bici_compartilhada.png-cf08e04b56897740ec121f8a67ba9f50.ctex"]
+source_file="res://assets/carta_arvore_nativa.png"
+dest_files=["res://.godot/imported/carta_arvore_nativa.png-778bb54b43fdfbb99ec68ff42cfc633d.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dhehcu6hhr17l"
-path="res://.godot/imported/BrancoCacaPalavras.png-ef8c051fd99ec7df55e73228a794fc02.ctex"
+path="res://.godot/imported/BrancoCacaPalavras.png-6d9c54bf7b980573a9cde18029940394.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Fotos e Videos/BrancoCacaPalavras.png"
-dest_files=["res://.godot/imported/BrancoCacaPalavras.png-ef8c051fd99ec7df55e73228a794fc02.ctex"]
+source_file="res://Fotos/BrancoCacaPalavras.png"
+dest_files=["res://.godot/imported/BrancoCacaPalavras.png-6d9c54bf7b980573a9cde18029940394.ctex"]
 
 [params]
 

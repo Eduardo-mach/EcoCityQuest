@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://yvbeexwh3dug"
-path="res://.godot/imported/Escavadeira.png-8edc4462785fa970802543ea1c1f7ab9.ctex"
+path="res://.godot/imported/Escavadeira.png-912517d0245e2f43ca8fe4fc2d4d1f6c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Fotos e Videos/Escavadeira.png"
-dest_files=["res://.godot/imported/Escavadeira.png-8edc4462785fa970802543ea1c1f7ab9.ctex"]
+source_file="res://Fotos/Escavadeira.png"
+dest_files=["res://.godot/imported/Escavadeira.png-912517d0245e2f43ca8fe4fc2d4d1f6c.ctex"]
 
 [params]
 

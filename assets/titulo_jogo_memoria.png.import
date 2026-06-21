@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bj4yogmx7xs4p"
-path="res://.godot/imported/carta_carro_eletrico.png-19b0483c116580ac0fc2b40a81af9f34.ctex"
+uid="uid://p4mkt5me60kl"
+path="res://.godot/imported/titulo_jogo_memoria.png-561da9dee0f832b98bffe7dd0286e896.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Fase1/JogoMemoria/assets/imagens/carta_carro_eletrico.png"
-dest_files=["res://.godot/imported/carta_carro_eletrico.png-19b0483c116580ac0fc2b40a81af9f34.ctex"]
+source_file="res://assets/titulo_jogo_memoria.png"
+dest_files=["res://.godot/imported/titulo_jogo_memoria.png-561da9dee0f832b98bffe7dd0286e896.ctex"]
 
 [params]
 

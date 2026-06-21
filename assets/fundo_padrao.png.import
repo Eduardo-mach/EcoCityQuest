@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0k67nawpdji3"
-path="res://.godot/imported/icone_ajuda.png-a08d6a374d2a2a9f635bca9bd98bb44c.ctex"
+uid="uid://c2hnuv6onphhm"
+path="res://.godot/imported/fundo_padrao.png-179cf5b9b14db480a65500382641e484.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Fase1/JogoMemoria/assets/imagens/icone_ajuda.png"
-dest_files=["res://.godot/imported/icone_ajuda.png-a08d6a374d2a2a9f635bca9bd98bb44c.ctex"]
+source_file="res://assets/fundo_padrao.png"
+dest_files=["res://.godot/imported/fundo_padrao.png-179cf5b9b14db480a65500382641e484.ctex"]
 
 [params]
 

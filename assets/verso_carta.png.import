@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d4hg0mcqe7uf5"
-path="res://.godot/imported/verso_carta.png-58d6041e827c1b0cdea916924a628558.ctex"
+path="res://.godot/imported/verso_carta.png-d7c70f8b3f81acd959b1de50d2328803.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Fase1/JogoMemoria/assets/imagens/verso_carta.png"
-dest_files=["res://.godot/imported/verso_carta.png-58d6041e827c1b0cdea916924a628558.ctex"]
+source_file="res://assets/verso_carta.png"
+dest_files=["res://.godot/imported/verso_carta.png-d7c70f8b3f81acd959b1de50d2328803.ctex"]
 
 [params]
 

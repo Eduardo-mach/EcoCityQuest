@@ -1,12 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://d1m2e3m4o5r6"]
+[gd_scene format=3 uid="uid://d1m2e3m4o5r6"]
 
 [ext_resource type="Script" uid="uid://b7yk1xkqxa2va" path="res://Fase1/JogoMemoria/JogoMemoria.gd" id="1_e0rpf"]
 [ext_resource type="Script" uid="uid://blbl6irgd5486" path="res://Fase1/JogoMemoria/LogicaJogoMemoria.gd" id="2_3pgaj"]
-[ext_resource type="Texture2D" uid="uid://c2hnuv6onphhm" path="res://Fase1/JogoMemoria/assets/imagens/fundo_padrao.png" id="3_edo84"]
-[ext_resource type="Texture2D" uid="uid://p4mkt5me60kl" path="res://Fase1/JogoMemoria/assets/imagens/titulo_jogo_memoria.png" id="4_fanka"]
-[ext_resource type="Texture2D" uid="uid://ce8g48e1dgqma" path="res://Fase1/JogoMemoria/assets/imagens/icone_voltar.png" id="5_w4v6e"]
-[ext_resource type="Texture2D" uid="uid://d0k67nawpdji3" path="res://Fase1/JogoMemoria/assets/imagens/icone_ajuda.png" id="6_nj2q3"]
-[ext_resource type="Texture2D" uid="uid://b1yb5rf6vjgfe" path="res://Fotos e Videos/Ellipse 1.png" id="7_6qyo4"]
+[ext_resource type="Texture2D" uid="uid://c2hnuv6onphhm" path="res://assets/fundo_padrao.png" id="3_edo84"]
+[ext_resource type="Texture2D" uid="uid://p4mkt5me60kl" path="res://assets/titulo_jogo_memoria.png" id="4_fanka"]
+[ext_resource type="Texture2D" uid="uid://ce8g48e1dgqma" path="res://assets/icone_voltar.png" id="5_w4v6e"]
+[ext_resource type="Texture2D" uid="uid://d0k67nawpdji3" path="res://assets/icone_ajuda.png" id="6_nj2q3"]
+[ext_resource type="Texture2D" uid="uid://b1yb5rf6vjgfe" path="res://Fotos/Ellipse 1.png" id="7_6qyo4"]
 
 [node name="JogoMemoria" type="Control"]
 layout_mode = 3

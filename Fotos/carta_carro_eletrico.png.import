@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://birjowi7ag01f"
-path="res://.godot/imported/carta_carro_eletrico.png-5c3e17bf7be26d988c0a994f48554d8f.ctex"
+path="res://.godot/imported/carta_carro_eletrico.png-a0962a66a451f8ceb7ecd37aedf06f73.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Fotos e Videos/carta_carro_eletrico.png"
-dest_files=["res://.godot/imported/carta_carro_eletrico.png-5c3e17bf7be26d988c0a994f48554d8f.ctex"]
+source_file="res://Fotos/carta_carro_eletrico.png"
+dest_files=["res://.godot/imported/carta_carro_eletrico.png-a0962a66a451f8ceb7ecd37aedf06f73.ctex"]
 
 [params]
 

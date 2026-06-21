@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnpd4eiv2ci5h"
-path="res://.godot/imported/carta_arvore_nativa.png-b655e021450b0b7b731e0c99eb439fa9.ctex"
+uid="uid://ceonicet6pqns"
+path="res://.godot/imported/carta_horta_comunitaria.png-6533b2a9442a1851cf0569dd3eff1284.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Fase1/JogoMemoria/assets/imagens/carta_arvore_nativa.png"
-dest_files=["res://.godot/imported/carta_arvore_nativa.png-b655e021450b0b7b731e0c99eb439fa9.ctex"]
+source_file="res://assets/carta_horta_comunitaria.png"
+dest_files=["res://.godot/imported/carta_horta_comunitaria.png-6533b2a9442a1851cf0569dd3eff1284.ctex"]
 
 [params]
 

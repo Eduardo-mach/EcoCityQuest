@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b1oakg46gcsd3"
-path="res://.godot/imported/Botão ajuda.png-c1ecf619536af3f8a25cd7ee7750922c.ctex"
+path="res://.godot/imported/Botão ajuda.png-9bf08a8bb07c2f2565f3ea7107b4694b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Fotos e Videos/Botão ajuda.png"
-dest_files=["res://.godot/imported/Botão ajuda.png-c1ecf619536af3f8a25cd7ee7750922c.ctex"]
+source_file="res://Fotos/Botão ajuda.png"
+dest_files=["res://.godot/imported/Botão ajuda.png-9bf08a8bb07c2f2565f3ea7107b4694b.ctex"]
 
 [params]
 

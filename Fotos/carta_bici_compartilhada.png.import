@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c4difog65aydj"
-path="res://.godot/imported/carta_bici_compartilhada.png-76848d8128c907a88aed1d1898a014b9.ctex"
+path="res://.godot/imported/carta_bici_compartilhada.png-89aa87a5544b2e92a7e08f7622d7d433.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Fotos e Videos/carta_bici_compartilhada.png"
-dest_files=["res://.godot/imported/carta_bici_compartilhada.png-76848d8128c907a88aed1d1898a014b9.ctex"]
+source_file="res://Fotos/carta_bici_compartilhada.png"
+dest_files=["res://.godot/imported/carta_bici_compartilhada.png-89aa87a5544b2e92a7e08f7622d7d433.ctex"]
 
 [params]
 

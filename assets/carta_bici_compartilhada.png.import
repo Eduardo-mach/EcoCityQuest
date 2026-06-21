@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drlls3f8vvt8m"
-path="res://.godot/imported/carta_painel_solar.png-66dad4dab28af166cb42ca8b322444f7.ctex"
+uid="uid://bewayjtcyal6v"
+path="res://.godot/imported/carta_bici_compartilhada.png-ac33d11352c38f54745e146eb1b02953.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Fase1/JogoMemoria/assets/imagens/carta_painel_solar.png"
-dest_files=["res://.godot/imported/carta_painel_solar.png-66dad4dab28af166cb42ca8b322444f7.ctex"]
+source_file="res://assets/carta_bici_compartilhada.png"
+dest_files=["res://.godot/imported/carta_bici_compartilhada.png-ac33d11352c38f54745e146eb1b02953.ctex"]
 
 [params]
 
