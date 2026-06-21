@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bybnwnftn8lhe"
-path="res://.godot/imported/Botão avançar.png-3654d2b674e7aebc92ac8701f39e8b52.ctex"
+uid="uid://cukju8ap0vxrq"
+path="res://.godot/imported/carta_lixeira_reciclagem.png-5040da228dedef92cd4f6e7a65a53992.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Fotos e Videos/Botão avançar.png"
-dest_files=["res://.godot/imported/Botão avançar.png-3654d2b674e7aebc92ac8701f39e8b52.ctex"]
+source_file="res://Fotos e Videos/carta_lixeira_reciclagem.png"
+dest_files=["res://.godot/imported/carta_lixeira_reciclagem.png-5040da228dedef92cd4f6e7a65a53992.ctex"]
 
 [params]
 

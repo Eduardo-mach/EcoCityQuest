@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bybnwnftn8lhe"
-path="res://.godot/imported/Botão avançar.png-3654d2b674e7aebc92ac8701f39e8b52.ctex"
+uid="uid://birjowi7ag01f"
+path="res://.godot/imported/carta_carro_eletrico.png-5c3e17bf7be26d988c0a994f48554d8f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Fotos e Videos/Botão avançar.png"
-dest_files=["res://.godot/imported/Botão avançar.png-3654d2b674e7aebc92ac8701f39e8b52.ctex"]
+source_file="res://Fotos e Videos/carta_carro_eletrico.png"
+dest_files=["res://.godot/imported/carta_carro_eletrico.png-5c3e17bf7be26d988c0a994f48554d8f.ctex"]
 
 [params]
 

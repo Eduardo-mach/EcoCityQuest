@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bybnwnftn8lhe"
-path="res://.godot/imported/Botão avançar.png-3654d2b674e7aebc92ac8701f39e8b52.ctex"
+uid="uid://c4difog65aydj"
+path="res://.godot/imported/carta_bici_compartilhada.png-76848d8128c907a88aed1d1898a014b9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Fotos e Videos/Botão avançar.png"
-dest_files=["res://.godot/imported/Botão avançar.png-3654d2b674e7aebc92ac8701f39e8b52.ctex"]
+source_file="res://Fotos e Videos/carta_bici_compartilhada.png"
+dest_files=["res://.godot/imported/carta_bici_compartilhada.png-76848d8128c907a88aed1d1898a014b9.ctex"]
 
 [params]
 

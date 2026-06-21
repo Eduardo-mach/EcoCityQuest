@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bybnwnftn8lhe"
-path="res://.godot/imported/Botão avançar.png-3654d2b674e7aebc92ac8701f39e8b52.ctex"
+uid="uid://nlo53tcx71ge"
+path="res://.godot/imported/carta_painel_solar.png-2c86194afa59fe4edd6fba561636ee2d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Fotos e Videos/Botão avançar.png"
-dest_files=["res://.godot/imported/Botão avançar.png-3654d2b674e7aebc92ac8701f39e8b52.ctex"]
+source_file="res://Fotos e Videos/carta_painel_solar.png"
+dest_files=["res://.godot/imported/carta_painel_solar.png-2c86194afa59fe4edd6fba561636ee2d.ctex"]
 
 [params]
 

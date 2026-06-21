@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bybnwnftn8lhe"
-path="res://.godot/imported/Botão avançar.png-3654d2b674e7aebc92ac8701f39e8b52.ctex"
+uid="uid://bja784sqcjdci"
+path="res://.godot/imported/Bot├úo voltar.png-22a8c0625f76a1537535073c2c76877e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Fotos e Videos/Botão avançar.png"
-dest_files=["res://.godot/imported/Botão avançar.png-3654d2b674e7aebc92ac8701f39e8b52.ctex"]
+source_file="res://Fotos e Videos/Bot├úo voltar.png"
+dest_files=["res://.godot/imported/Bot├úo voltar.png-22a8c0625f76a1537535073c2c76877e.ctex"]
 
 [params]
 

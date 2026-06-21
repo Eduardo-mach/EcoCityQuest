@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bja784sqcjdci"
-path="res://.godot/imported/Botão voltar.png-ed6599f3bdeac4ac8d9bb31985c23ccd.ctex"
+path="res://.godot/imported/Botão voltar.png-e5d705736ddfc2b7f7653c561fd35783.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Fotos/Botão voltar.png"
-dest_files=["res://.godot/imported/Botão voltar.png-ed6599f3bdeac4ac8d9bb31985c23ccd.ctex"]
+source_file="res://Fotos e Videos/Botão voltar.png"
+dest_files=["res://.godot/imported/Botão voltar.png-e5d705736ddfc2b7f7653c561fd35783.ctex"]
 
 [params]
 
