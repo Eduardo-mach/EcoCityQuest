@@ -179,6 +179,8 @@ func _on_par_encontrado(id_carta: String) -> void:
 	if terminou:
 		print("Jogo da Memória concluído!")
 		get_node("/root/GerenciadorJogo").avancar_exercicio()
+		await get_tree().create_timer(1.5).timeout
+		get_tree().change_scene_to_file("res://Fase1/JogoTelhado/Exercicio2/JogoTelhado.tscn")
 		if label_timer:
 			label_timer.text = "Tempo esgotado!"
 		tempo_restante = 600  # reinicia se quiser

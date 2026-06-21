@@ -73,6 +73,8 @@ func _on_objetivo_concluido(tipo: String) -> void:
 func _on_exercicio_finalizado() -> void:
 	print("Exercício Fase 1 - Exercício 2 concluído!")
 	var gerenciador = get_node("/root/GerenciadorJogo")
+	await get_tree().create_timer(1.5).timeout
+	get_tree().change_scene_to_file("res://Fase2/Exercicio2/conserte_a_rua_tscn.tscn")
 
 	if gerenciador:
 		gerenciador.avancar_exercicio()

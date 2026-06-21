@@ -11,7 +11,7 @@
 [sub_resource type="LabelSettings" id="LabelSettings_6qyo4"]
 font_size = 24
 
-[sub_resource type="FontVariation" id="FontVariation_8ctea"]
+[sub_resource type="FontVariation" id="FontVariation_6qyo4"]
 base_font = ExtResource("7_itvdy")
 variation_opentype = {
 1869640570: 14,
@@ -19,15 +19,15 @@ variation_opentype = {
 }
 
 [sub_resource type="LabelSettings" id="LabelSettings_6wpdw"]
-font = SubResource("FontVariation_8ctea")
+font = SubResource("FontVariation_6qyo4")
 font_size = 80
 font_color = Color(0, 0, 0, 1)
 
-[sub_resource type="FontVariation" id="FontVariation_tbony"]
+[sub_resource type="FontVariation" id="FontVariation_itvdy"]
 base_font = ExtResource("7_itvdy")
 
 [sub_resource type="LabelSettings" id="LabelSettings_r1cx6"]
-font = SubResource("FontVariation_tbony")
+font = SubResource("FontVariation_itvdy")
 font_size = 32
 font_color = Color(0, 0, 0, 1)
 
@@ -64,9 +64,9 @@ stretch_mode = 1
 
 [node name="GradeCartas" type="GridContainer" parent="." unique_id=735095770]
 layout_mode = 0
-offset_left = 265.0
+offset_left = 236.0
 offset_top = 259.0
-offset_right = 805.0
+offset_right = 776.0
 offset_bottom = 669.0
 theme_override_constants/h_separation = 15
 theme_override_constants/v_separation = 15
