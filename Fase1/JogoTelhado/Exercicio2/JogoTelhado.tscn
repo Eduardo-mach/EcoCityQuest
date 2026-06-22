@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://mmcwb8t37cdx"]
+[gd_scene load_steps=17 format=3 uid="uid://mmcwb8t37cdx"]
 
 [ext_resource type="Script" uid="uid://vnif12eeqr1s" path="res://Fase1/JogoTelhado/Fase1Exercicio2.gd" id="1_p40mu"]
 [ext_resource type="Script" uid="uid://cmklottfd3prn" path="res://Fase1/JogoTelhado/LogicaFase1Exercicio2.gd" id="2_uholv"]
@@ -8,9 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://dg73ne7bdahpx" path="res://assets/casa.svg" id="5_wpicf"]
 [ext_resource type="Texture2D" uid="uid://fsoraw3yuj62" path="res://assets/painel.png" id="6_wpicf"]
 [ext_resource type="Texture2D" uid="uid://bcayd0gyr01fm" path="res://assets/lixo.png" id="8_p1q0i"]
-[ext_resource type="Texture2D" uid="uid://bja784sqcjdci" path="res://Fotos/Bot#U251c#U00fao voltar.png" id="9_vhf6y"]
-[ext_resource type="Texture2D" uid="uid://b1oakg46gcsd3" path="res://Fotos/Bot#U251c#U00fao ajuda.png" id="10_xtto8"]
+[ext_resource type="Texture2D" uid="uid://bja784sqcjdci" path="res://Fotos/Bot├úo voltar.png" id="9_vhf6y"]
+[ext_resource type="Texture2D" uid="uid://b1oakg46gcsd3" path="res://Fotos/Bot├úo ajuda.png" id="10_xtto8"]
 [ext_resource type="Texture2D" uid="uid://b1yb5rf6vjgfe" path="res://Fotos/Ellipse 1.png" id="11_wpicf"]
+[ext_resource type="VideoStream" uid="uid://bnu862kn16r7v" path="res://Fotos/Tutorial02.ogv" id="12_p1q0i"]
 
 [sub_resource type="FontVariation" id="FontVariation_8ctea"]
 base_font = ExtResource("4_p1q0i")
@@ -37,7 +38,7 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 483.0
+offset_right = 488.0
 offset_bottom = -32.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -45,14 +46,6 @@ script = ExtResource("1_p40mu")
 
 [node name="LogicaExercicio" type="Node" parent="."]
 script = ExtResource("2_uholv")
-
-[node name="TimerExercicio" type="Timer" parent="LogicaExercicio"]
-
-[node name="LabelTimer" type="Label" parent="LogicaExercicio/TimerExercicio"]
-offset_left = 1012.0
-offset_top = 140.0
-offset_right = 1052.0
-offset_bottom = 163.0
 
 [node name="Fundo" type="TextureRect" parent="."]
 layout_mode = 1
@@ -138,9 +131,9 @@ nome_objeto = "placa_solar"
 
 [node name="ItemEntulho" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 576.0
+offset_left = 574.0
 offset_top = 511.0
-offset_right = 836.5417
+offset_right = 834.5417
 offset_bottom = 696.0
 texture = ExtResource("8_p1q0i")
 expand_mode = 1
@@ -168,6 +161,14 @@ texture_normal = ExtResource("10_xtto8")
 ignore_texture_size = true
 stretch_mode = 5
 
+[node name="Button" type="Button" parent="BotaoAjuda"]
+visible = false
+layout_mode = 0
+offset_left = 12.0
+offset_top = 7.0
+offset_right = 59.0
+offset_bottom = 48.0
+
 [node name="CronometroVisua" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = 981.00006
@@ -178,4 +179,31 @@ scale = Vector2(0.561266, 0.5972899)
 texture = ExtResource("11_wpicf")
 expand_mode = 2
 
-[connection signal="timeout" from="LogicaExercicio/TimerExercicio" to="LogicaExercicio" method="_on_timer_exercicio_timeout"]
+[node name="TimerExercicio" type="Timer" parent="."]
+
+[node name="LabelTimer" type="Label" parent="TimerExercicio"]
+offset_left = 998.0
+offset_top = 255.0
+offset_right = 1047.0
+offset_bottom = 287.0
+
+[node name="video_player" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 993.0
+offset_top = 116.0
+offset_right = 1033.0
+offset_bottom = 156.0
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="video_player"]
+layout_mode = 0
+offset_left = -988.0
+offset_top = -134.0
+offset_right = 1001.4514
+offset_bottom = 946.0
+scale = Vector2(0.5368315, 0.70284295)
+mouse_filter = 2
+stream = ExtResource("12_p1q0i")
+
+[connection signal="pressed" from="BotaoAjuda" to="." method="_on_botao_ajuda_pressed"]
+[connection signal="timeout" from="TimerExercicio" to="LogicaExercicio" method="_on_timer_exercicio_timeout"]
+[connection signal="finished" from="video_player/VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]

@@ -1,17 +1,17 @@
-[gd_scene format=3 uid="uid://d1m2e3m4o5r6"]
+[gd_scene load_steps=13 format=3 uid="uid://d1m2e3m4o5r6"]
 
 [ext_resource type="Script" uid="uid://b7yk1xkqxa2va" path="res://Fase1/JogoMemoria/JogoMemoria.gd" id="1_e0rpf"]
 [ext_resource type="Script" uid="uid://blbl6irgd5486" path="res://Fase1/JogoMemoria/LogicaJogoMemoria.gd" id="2_3pgaj"]
 [ext_resource type="Texture2D" uid="uid://c2hnuv6onphhm" path="res://assets/fundo_padrao.png" id="3_edo84"]
-[ext_resource type="Texture2D" uid="uid://bja784sqcjdci" path="res://Fotos/Botão voltar.png" id="5_6qyo4"]
-[ext_resource type="Texture2D" uid="uid://b1oakg46gcsd3" path="res://Fotos/Botão ajuda.png" id="6_itvdy"]
+[ext_resource type="Texture2D" uid="uid://bja784sqcjdci" path="res://Fotos/Bot├úo voltar.png" id="5_6qyo4"]
+[ext_resource type="Texture2D" uid="uid://b1oakg46gcsd3" path="res://Fotos/Bot├úo ajuda.png" id="6_itvdy"]
 [ext_resource type="Texture2D" uid="uid://b1yb5rf6vjgfe" path="res://Fotos/Ellipse 1.png" id="7_6qyo4"]
 [ext_resource type="FontFile" uid="uid://c7kk8scqhpcmo" path="res://assets/fonts/Inter-VariableFont_opsz,wght.ttf" id="7_itvdy"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_6qyo4"]
 font_size = 24
 
-[sub_resource type="FontVariation" id="FontVariation_6qyo4"]
+[sub_resource type="FontVariation" id="FontVariation_8ctea"]
 base_font = ExtResource("7_itvdy")
 variation_opentype = {
 1869640570: 14,
@@ -19,19 +19,19 @@ variation_opentype = {
 }
 
 [sub_resource type="LabelSettings" id="LabelSettings_6wpdw"]
-font = SubResource("FontVariation_6qyo4")
+font = SubResource("FontVariation_8ctea")
 font_size = 80
 font_color = Color(0, 0, 0, 1)
 
-[sub_resource type="FontVariation" id="FontVariation_itvdy"]
+[sub_resource type="FontVariation" id="FontVariation_tbony"]
 base_font = ExtResource("7_itvdy")
 
 [sub_resource type="LabelSettings" id="LabelSettings_r1cx6"]
-font = SubResource("FontVariation_itvdy")
+font = SubResource("FontVariation_tbony")
 font_size = 32
 font_color = Color(0, 0, 0, 1)
 
-[node name="JogoMemoria" type="Control" unique_id=537506625]
+[node name="JogoMemoria" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -41,10 +41,10 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_e0rpf")
 
-[node name="LogicaJogo" type="Node" parent="." unique_id=1087748446]
+[node name="LogicaJogo" type="Node" parent="."]
 script = ExtResource("2_3pgaj")
 
-[node name="Fundo" type="TextureRect" parent="." unique_id=839116032]
+[node name="Fundo" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.98700005
@@ -62,17 +62,17 @@ texture = ExtResource("3_edo84")
 expand_mode = 1
 stretch_mode = 1
 
-[node name="GradeCartas" type="GridContainer" parent="." unique_id=735095770]
+[node name="GradeCartas" type="GridContainer" parent="."]
 layout_mode = 0
-offset_left = 236.0
+offset_left = 265.0
 offset_top = 259.0
-offset_right = 776.0
+offset_right = 805.0
 offset_bottom = 669.0
 theme_override_constants/h_separation = 15
 theme_override_constants/v_separation = 15
 columns = 4
 
-[node name="BotaoVoltar" type="TextureButton" parent="." unique_id=447482407]
+[node name="BotaoVoltar" type="TextureButton" parent="."]
 layout_mode = 0
 offset_left = 1001.0
 offset_top = 19.0
@@ -82,7 +82,7 @@ texture_normal = ExtResource("5_6qyo4")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="BotaoAjuda" type="TextureButton" parent="." unique_id=1631935966]
+[node name="BotaoAjuda" type="TextureButton" parent="."]
 layout_mode = 0
 offset_left = 1002.0
 offset_top = 75.0
@@ -92,7 +92,7 @@ texture_normal = ExtResource("6_itvdy")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="CronometroVisual" type="TextureRect" parent="." unique_id=946539510]
+[node name="CronometroVisual" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = 985.0
 offset_top = 139.0
@@ -101,9 +101,9 @@ offset_bottom = 210.0
 texture = ExtResource("7_6qyo4")
 expand_mode = 1
 
-[node name="TimerExercicio" type="Timer" parent="." unique_id=176109724]
+[node name="TimerExercicio" type="Timer" parent="."]
 
-[node name="LabelTimer" type="Label" parent="TimerExercicio" unique_id=186000548]
+[node name="LabelTimer" type="Label" parent="TimerExercicio"]
 offset_left = 994.0
 offset_top = 157.0
 offset_right = 1038.0
@@ -111,7 +111,7 @@ offset_bottom = 180.0
 size_flags_horizontal = 4
 label_settings = SubResource("LabelSettings_6qyo4")
 
-[node name="FundoCinza" type="ColorRect" parent="." unique_id=1753963149]
+[node name="FundoCinza" type="ColorRect" parent="."]
 layout_mode = 0
 offset_left = 76.0
 offset_top = 52.0
@@ -119,7 +119,7 @@ offset_right = 946.0
 offset_bottom = 245.0
 color = Color(1, 0.87058824, 0.29803923, 1)
 
-[node name="Titulo" type="Label" parent="." unique_id=630989726]
+[node name="Titulo" type="Label" parent="."]
 layout_mode = 0
 offset_left = 27.0
 offset_top = 63.0
@@ -133,7 +133,7 @@ label_settings = SubResource("LabelSettings_6wpdw")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Descricao" type="Label" parent="." unique_id=696156398]
+[node name="Descricao" type="Label" parent="."]
 layout_mode = 0
 offset_left = 69.0
 offset_top = 154.0

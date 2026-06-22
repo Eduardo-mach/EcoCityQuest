@@ -2,20 +2,20 @@ extends Control
 
 const SCRIPT_CARTA = preload("res://Fase1/JogoMemoria/scripts/CartaMemoria.gd")
 
-@onready var logica: Node = $LogicaJogo
+@onready var logica: JogoMemoria = $LogicaJogo
 @onready var grade_cartas: GridContainer = $GradeCartas
 @onready var botao_voltar: TextureButton = $BotaoVoltar
 @onready var botao_ajuda: TextureButton = $BotaoAjuda
 
-var textura_verso: Texture2D = preload("res://assets/verso_carta.png")
+var textura_verso: Texture2D = preload("res://Fotos/verso_carta.png")
 
 var texturas_frente: Dictionary = {
-	"arvore_nativa": preload("res://assets/carta_arvore_nativa.png"),
-	"painel_solar": preload("res://assets/carta_painel_solar.png"),
-	"lixeira_reciclagem": preload("res://assets/carta_lixeira_reciclagem.png"),
-	"bici_compartilhada": preload("res://assets/carta_bici_compartilhada.png"),
-	"carro_eletrico": preload("res://assets/carta_carro_eletrico.png"),
-	"horta_comunitaria": preload("res://assets/carta_horta_comunitaria.png"),
+	"arvore_nativa": preload("res://Fotos/carta_arvore_nativa.png"),
+	"painel_solar": preload("res://Fotos/carta_painel_solar.png"),
+	"lixeira_reciclagem": preload("res://Fotos/carta_lixeira_reciclagem.png"),
+	"bici_compartilhada": preload("res://Fotos/carta_bici_compartilhada.png"),
+	"carro_eletrico": preload("res://Fotos/carta_carro_eletrico.png"),
+	"horta_comunitaria": preload("res://Fotos/carta_horta_comunitaria.png"),
 }
 
 var cartas: Array = []
@@ -24,7 +24,6 @@ var video_player: VideoStreamPlayer
 
 func _ready() -> void:
 	logica.par_encontrado.connect(_on_par_encontrado)
-	logica.par_errado.connect(_on_par_errado)
 	logica.jogo_da_memoria_concluido.connect(_on_jogo_concluido)
 	botao_voltar.pressed.connect(_on_botao_voltar_pressed)
 	botao_ajuda.pressed.connect(_on_botao_ajuda_pressed)
@@ -110,8 +109,6 @@ func _on_par_encontrado(id_carta: String) -> void:
 
 func _on_jogo_concluido() -> void:
 	print("Jogo da Memória concluído!")
-	await get_tree().create_timer(1.5).timeout
-	get_tree().change_scene_to_file("res://Fase2/tela_parabens.tscn")
 
 func _on_botao_voltar_pressed() -> void:
 	if ResourceLoader.exists("res://scripts/GerenciadorJogo.gd"):

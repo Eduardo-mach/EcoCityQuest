@@ -6,15 +6,33 @@ signal exercicio_finalizado
 
 var telhado_concluido: bool = false
 
-# Agora acessa corretamente os nós
-@onready var timer_exercicio: Timer = $TimerExercicio
-@onready var timer_label: Label = $TimerExercicio/LabelTimer
+var timer_exercicio: Timer
+var timer_label: Label
+var tempo_restante: int = 10  # segundos de duração do exercício
+
+func _ready() -> void:
+	# Criar Timer
+	timer_exercicio = Timer.new()
+	timer_exercicio.wait_time = 1.0
+	timer_exercicio.one_shot = false
+	add_child(timer_exercicio)
+
+	# Conectar sinal timeout
+	timer_exercicio.timeout.connect(_on_TimerExercicio_timeout)
+
+	# Criar Label para mostrar tempo
+	timer_label = Label.new()
+	timer_label.text = formatar_tempo(tempo_restante)
+	add_child(timer_label)
 
 func inicializar_exercicio():
 	telhado_concluido = false
+	tempo_restante = 10  # reinicia o cronômetro
+	timer_label.text = formatar_tempo(tempo_restante)
+	timer_exercicio.start()
 
-	timer_exercicio.start(0.5)
-	await timer_exercicio.timeout
+	# Pequeno atraso antes da narração inicial
+	await get_tree().create_timer(0.5).timeout
 	emit_signal("tocar_narracao", "audio_intro_f1e2")
 
 func processar_item_arrastado(objeto: String, alvo: String) -> Dictionary:
@@ -37,11 +55,22 @@ func _verificar_fim_do_exercicio():
 		emit_signal("exercicio_finalizado")
 		emit_signal("tocar_narracao", "audio_parabens_fase1")
 
-		timer_exercicio.start(3.0)
-		await timer_exercicio.timeout
+		# Espera 3 segundos antes de avançar
+		await get_tree().create_timer(3.0).timeout
 
 		if ResourceLoader.exists("res://scripts/GerenciadorJogo.gd"):
 			get_node("/root/GerenciadorJogo").avancar_exercicio()
 
 func _on_TimerExercicio_timeout() -> void:
-	timer_label.text = "Tempo esgotado!"
+	tempo_restante -= 1
+	if tempo_restante > 0:
+		timer_label.text = formatar_tempo(tempo_restante)
+	else:
+		timer_exercicio.stop()
+		timer_label.text = "Tempo esgotado!"
+		emit_signal("exercicio_finalizado")
+
+func formatar_tempo(segundos: int) -> String:
+	var minutos = int(segundos / 60)
+	var seg = int(segundos % 60)
+	return str(minutos).pad_zeros(2) + ":" + str(seg).pad_zeros(2)
