@@ -11,6 +11,7 @@ func _on_button_pressed() -> void:
 	tela_video.visible = true
 	video_player.stream = load("res://Fotos/Tutorial04.ogv")
 	video_player.play()
+	GerenciadorAudio.tocar("ajuda")
 
 func _on_video_finished() -> void:
 	tela_video.visible = false
