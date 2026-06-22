@@ -10,7 +10,7 @@ var ranking: Array = []
 
 const CAMINHO_SALVAMENTO = "user://ranking_ecocity.json"
 
-# 🎵 Criamos o tocador de áudio por código
+# 🎵 Criamos o tocador de música de fundo
 @onready var musica_fundo = AudioStreamPlayer.new()
 
 func _ready():
@@ -18,11 +18,8 @@ func _ready():
 	
 	# 🎵 Configura e solta a trilha sonora assim que o jogo abre
 	add_child(musica_fundo)
-	
-	# ⚠️ ATENÇÃO: Troque "musica_jogo.mp3" pelo nome EXATO do arquivo que você baixou
 	musica_fundo.stream = load("res://assets/musica_jogo.mp3") 
-	
-	musica_fundo.volume_db = -12 # Diminui um pouco o volume para ficar agradável de fundo
+	musica_fundo.volume_db = -12
 	musica_fundo.play()
 
 # Define o nome do aluno e reseta o progresso para o início
@@ -31,6 +28,10 @@ func iniciar_novo_jogo(nome: String):
 	fase_atual = 1
 	exercicio_atual = 1
 	print("Jogo iniciado para o aluno: ", nome_jogador)
+
+	# 🔊 Toca áudio de início
+	if Engine.has_singleton("GerenciadorAudio"):
+		GerenciadorAudio.tocar("jogar")
 
 # Avança o fluxo do jogo com base na sua lista de exercícios
 func avancar_exercicio():
@@ -42,13 +43,19 @@ func avancar_exercicio():
 	elif fase_atual == 2 and exercicio_atual == 1:
 		exercicio_atual = 2
 
+	print("Avançando para Fase ", fase_atual, " - Exercício ", exercicio_atual)
+
+	# 🔊 Toca áudio correspondente à fase/exercício
+	var chave_audio = "fase%d_ex%d" % [fase_atual, exercicio_atual]
+	if Engine.has_singleton("GerenciadorAudio"):
+		GerenciadorAudio.tocar(chave_audio)
+
 # Função de finalização estável e direta
 func finalizar_jogo(pontuacao_final: int):
 	var nome_salvar = nome_jogador
 	if nome_salvar == "":
 		nome_salvar = "Jogador"
 
-	# 🎯 Dividimos o valor por 10 para reduzir (ex: de 9978 para 997)
 	var pontuacao_reduzida : int = int(pontuacao_final / 10)
 
 	print("Parabéns, ", nome_salvar, "! Jogo concluído com ", pontuacao_reduzida, " pontos.")
@@ -60,7 +67,7 @@ func finalizar_jogo(pontuacao_final: int):
 	
 	ranking.append(nova_pontuacao)
 	
-	# Ordenação manual simplificada para evitar lambdas que quebram o compilador
+	# Ordenação manual simplificada
 	for i in range(ranking.size()):
 		for j in range(i + 1, ranking.size()):
 			if int(ranking[j]["pontuacao"]) > int(ranking[i]["pontuacao"]):
@@ -73,6 +80,10 @@ func finalizar_jogo(pontuacao_final: int):
 		ranking.resize(3)
 		
 	salvar_ranking()
+
+	# 🔊 Toca áudio de sair/finalizar
+	if Engine.has_singleton("GerenciadorAudio"):
+		GerenciadorAudio.tocar("sair")
 
 # Salva o ranking em um arquivo JSON local
 func salvar_ranking():
