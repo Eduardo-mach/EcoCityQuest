@@ -20,7 +20,7 @@ var usou_arvore = false
 func _ready():
 	# 1. Configura o visual do tempo assim que a tela abre
 	atualizar_texto_cronometro()
-	
+
 	# 2. Conecta o sinal do seu Timer físico da árvore de nós
 	timer_interno.timeout.connect(_on_timer_timeout)
 	timer_interno.wait_time = 1.0
@@ -50,31 +50,27 @@ func atualizar_texto_cronometro():
 # Essa função central processa a escolha (seja por clique ou por arrastar e soltar)
 func processar_escolha(nome_objeto: String):
 	if jogo_finalizado: return
-	
+
 	match nome_objeto:
 		"Botao Entulho":
 			titulo.text = "QUASE LÁ"
 			descricao.text = "O entulho é composto por restos de obras e sujeira. Vamos tentar novamente?"
-			titulo.modulate = Color(1, 0.4, 0.4) # Vermelho/Laranja firme
+			titulo.modulate = Color(1, 0.4, 0.4)
 			descricao.modulate = Color(1, 0.4, 0.4)
-			
+
 		"Botao_Rolo":
 			if not usou_trator:
 				usou_trator = true
-				$Botao_Rolo.modulate = Color(0.5, 0.5, 0.5) # Escurece o botão usado
-				
-				# Altera a imagem da rua na hora (Substitua pelo caminho real da sua foto)
+				$Botao_Rolo.modulate = Color(0.5, 0.5, 0.5)
 				imagem_rua.texture = load("res://Fotos/rua_lisa.png")
-				
 				verificar_progresso_jogo("O tratorzinho aplainou o asfalto e tapou todos os buracos da rua!")
-			
+
 		"Botao_Arvore":
 			if not usou_arvore:
 				usou_arvore = true
 				$Botao_Arvore.modulate = Color(0.5, 0.5, 0.5)
 				verificar_progresso_jogo("Você plantou árvores ao longo da via para trazer mais sustentabilidade!")
 
-# --- FUNÇÃO SUBSTITUÍDA E ATUALIZADA AQUI ---
 func verificar_progresso_jogo(mensagem_atual: String):
 	if usou_trator and usou_arvore:
 		jogo_finalizado = true
@@ -83,22 +79,27 @@ func verificar_progresso_jogo(mensagem_atual: String):
 		descricao.text = "Você usou o trator para arrumar o asfalto e plantou árvores para criar uma linda rua verde e sustentável!"
 		titulo.modulate = Color(0.3, 1, 0.3)
 		descricao.modulate = Color(0.3, 1, 0.3)
-		
-		# CALCULA A PONTUAÇÃO
-		var tempo_gasto = 420 - tempo_restante
-		var erros = 0 
-		var pontuacao_rua = int(10000 - (erros * 100) - tempo_gasto)
-		if pontuacao_rua < 0: pontuacao_rua = 0
-		
-		# SALVA DIRETO NO SEU NODE DE RANKING GLOBAL
-		# Mudamos o caminho aqui para conversar com o nó que deu na imagem!
-		var ranking_global = get_node("/root/GerenciadorRanking")
-		ranking_global.pontos_exercicio1 = pontuacao_rua
-		
-		# Espera 3 segundos e avança para a tela de parabéns
-		await get_tree().create_timer(3.0).timeout
-		get_tree().change_scene_to_file("res://Fase2/tela_pontuacao1.tscn")
-		
+
+		# CALCULA A PONTUAÇÃO (mais tempo restante = mais pontos, max 8400)
+		var pontuacao_rua = int(tempo_restante * 20)
+		pontuacao_rua = clamp(pontuacao_rua, 0, 8400)
+
+		# SALVA NO GERENCIADORRANKING
+		if has_node("/root/GerenciadorRanking"):
+			GerenciadorRanking.pontos_rua = pontuacao_rua
+			print("[ConserteARua] Pontuação salva: ", pontuacao_rua)
+
+		# Salva pontuação total no ranking histórico (último jogo da sequência)
+		if has_node("/root/GerenciadorRanking") and has_node("/root/GerenciadorJogo"):
+			var total = GerenciadorRanking.get_pontuacao_total()
+			GerenciadorJogo.finalizar_jogo(total)
+			print("[ConserteARua] Pontuação total salva no ranking: ", total)
+
+		# Espera 2 segundos e avança para ranking_rua via GerenciadorJogo
+		await get_tree().create_timer(2.0).timeout
+		if has_node("/root/GerenciadorJogo"):
+			GerenciadorJogo.avancar_exercicio()
+
 	else:
 		titulo.text = "MUITO BEM..."
 		descricao.text = mensagem_atual + " A rua ainda precisa de mais uma melhoria. O que mais falta fazer?"
@@ -117,3 +118,11 @@ func game_over():
 	descricao.text = "O cronômetro zerou! Vamos tentar de novo?."
 	titulo.modulate = Color(1, 0.3, 0.3)
 	descricao.modulate = Color(1, 0.3, 0.3)
+
+	# Mesmo com game over, avança para o ranking (com 0 pontos)
+	if has_node("/root/GerenciadorRanking"):
+		GerenciadorRanking.pontos_rua = 0
+
+	await get_tree().create_timer(2.0).timeout
+	if has_node("/root/GerenciadorJogo"):
+		GerenciadorJogo.avancar_exercicio()

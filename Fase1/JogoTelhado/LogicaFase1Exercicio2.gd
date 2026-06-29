@@ -54,12 +54,7 @@ func _verificar_fim_do_exercicio():
 	if telhado_concluido:
 		emit_signal("exercicio_finalizado")
 		emit_signal("tocar_narracao", "audio_parabens_fase1")
-
-		# Espera 3 segundos antes de avançar
-		await get_tree().create_timer(3.0).timeout
-
-		if ResourceLoader.exists("res://scripts/GerenciadorJogo.gd"):
-			get_node("/root/GerenciadorJogo").avancar_exercicio()
+		# A navegação é tratada pelo Fase1Exercicio2.gd ao receber o sinal exercicio_finalizado
 
 func _on_TimerExercicio_timeout() -> void:
 	tempo_restante -= 1

@@ -22,6 +22,7 @@ config/features=PackedStringArray("4.6")
 
 GerenciadorRanking="*uid://k40h5ko236p0"
 GerenciadorJogo="*uid://djrfmngtrqupn"
+GerenciadorAudio="*uid://dujh8wtt63jgv"
 
 [display]
 

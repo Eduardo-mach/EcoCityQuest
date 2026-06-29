@@ -12,21 +12,25 @@ const SCRIPT_CARTA = preload("res://Fase1/JogoMemoria/CartaMemoria.gd")
 var textura_verso: Texture2D = preload("res://assets/verso_carta.png")
 
 var texturas_frente: Dictionary = {
-	"arvore_nativa": preload("res://assets/carta_arvore_nativa.png"),
-	"painel_solar": preload("res://assets/carta_painel_solar.png"),
+	"arvore_nativa":      preload("res://assets/carta_arvore_nativa.png"),
+	"painel_solar":       preload("res://assets/carta_painel_solar.png"),
 	"lixeira_reciclagem": preload("res://assets/carta_lixeira_reciclagem.png"),
 	"bici_compartilhada": preload("res://assets/carta_bici_compartilhada.png"),
-	"carro_eletrico": preload("res://assets/carta_carro_eletrico.png"),
-	"horta_comunitaria": preload("res://assets/carta_horta_comunitaria.png"),
+	"carro_eletrico":     preload("res://assets/carta_carro_eletrico.png"),
+	"horta_comunitaria":  preload("res://assets/carta_horta_comunitaria.png"),
 }
 
 var cartas: Array = []
 var popup_video: Control
 var video_player: VideoStreamPlayer
-var tempo_restante: int = 180  
+var tempo_restante: int = 180  # 3 minutos
+
+# ─── CONTROLE DE CLIQUE ───────────────────────────────────────────────────────
+# Enquanto aguardando_resultado = true, novos cliques são ignorados.
+# Isso garante que o jogador veja as duas cartas antes de desvirar.
+var aguardando_resultado: bool = false
 
 func _ready() -> void:
-	# Conexões e setup da lógica do jogo
 	if logica and logica.has_signal("par_encontrado"):
 		logica.connect("par_encontrado", Callable(self, "_on_par_encontrado"))
 
@@ -34,20 +38,17 @@ func _ready() -> void:
 	botao_ajuda.pressed.connect(_on_botao_ajuda_pressed)
 	_criar_popup_video()
 	_montar_tabuleiro()
-
-	# Inicializa label mesmo que o nó não exista (evita erro)
 	atualizar_label()
 
-	# Configuração do Timer (se existir)
 	if timer:
 		timer.wait_time = 1.0
 		timer.one_shot = false
-		# conecta o sinal por código para garantir que a função seja chamada
 		timer.timeout.connect(Callable(self, "_on_timer_timeout"))
 		timer.start()
 	else:
-		push_warning("TimerExercicio não encontrado na cena. Adicione um Timer chamado 'TimerExercicio' para ativar o cronômetro.")
+		push_warning("TimerExercicio não encontrado na cena.")
 
+# ─── CRONÔMETRO ───────────────────────────────────────────────────────────────
 func _on_timer_timeout() -> void:
 	tempo_restante -= 1
 	atualizar_label()
@@ -61,38 +62,19 @@ func atualizar_label() -> void:
 	var segundos = int(tempo_restante % 60)
 	var texto = "%02d:%02d" % [minutos, segundos]
 
-	# tenta usar a label já referenciada por @onready
 	if not label_timer:
-		# procura recursivamente por um nó chamado "LabelTimer"
 		var found = find_child("LabelTimer", true, false)
 		if found and found is Label:
 			label_timer = found as Label
 		else:
-			# tenta caminho comum dentro de um container chamado CronometroVisual
 			label_timer = get_node_or_null("CronometroVisual/LabelTimer") as Label
 
-	# se ainda não existir, apenas loga e sai (evita criar e posicionar)
 	if not label_timer:
-		push_warning("LabelTimer não encontrado. Verifique o nome/caminho na cena.")
-		print("Timer:", texto)  # fallback para debug
+		print("Timer:", texto)
 		return
-
-	# atualiza o texto na UI
 	label_timer.text = texto
 
-
-	# se ainda não existir, apenas loga e sai (evita criar e posicionar)
-	if not label_timer:
-		push_warning("LabelTimer não encontrado. Verifique o nome/caminho na cena.")
-		print("Timer:", texto)  # fallback para debug
-		return
-
-	# atualiza o texto na UI
-	label_timer.text = texto
-
-
-
-
+# ─── POPUP DE VÍDEO ───────────────────────────────────────────────────────────
 func _criar_popup_video() -> void:
 	popup_video = Control.new()
 	popup_video.set_anchors_preset(Control.PRESET_FULL_RECT)
@@ -114,7 +96,7 @@ func _criar_popup_video() -> void:
 
 	video_player = VideoStreamPlayer.new()
 	video_player.custom_minimum_size = Vector2(560, 350)
-	video_player.stream = load("res://Fotos/Tutorial01.ogv")
+	video_player.stream = load("res://Fase1/JogoMemoria/Exercicio1/Tutorial01.ogv")
 	video_player.finished.connect(_on_video_finalizado)
 	vbox.add_child(video_player)
 
@@ -126,6 +108,8 @@ func _criar_popup_video() -> void:
 	vbox.add_child(botao_fechar)
 
 func _on_botao_ajuda_pressed() -> void:
+	if has_node("/root/GerenciadorAudio"):
+		GerenciadorAudio.tocar("ajuda")
 	popup_video.visible = true
 	video_player.play()
 
@@ -136,6 +120,7 @@ func _on_botao_fechar_video_pressed() -> void:
 func _on_video_finalizado() -> void:
 	popup_video.visible = false
 
+# ─── TABULEIRO ────────────────────────────────────────────────────────────────
 func _montar_tabuleiro() -> void:
 	for filho in grade_cartas.get_children():
 		filho.queue_free()
@@ -153,23 +138,54 @@ func _montar_tabuleiro() -> void:
 		carta.configurar(i, frente, textura_verso)
 		cartas.append(carta)
 
+# ─── LÓGICA DE CLIQUE NAS CARTAS ─────────────────────────────────────────────
+# Chamado por CartaMemoria._on_pressed()
 func on_carta_clicada(carta: Node) -> void:
-	carta.mostrar_frente()
-	var resultado: Dictionary = await logica.escolher_carta(carta.posicao_index)
-	match resultado.get("status", ""):
-		"errou":
-			_desvirar_cartas_erradas()
+	# Bloqueia cliques enquanto estamos avaliando um par (aguardando desvirar)
+	if aguardando_resultado:
+		return
+	# Ignora cartas já bloqueadas ou já viradas (segurança extra)
+	if carta.bloqueada or carta.virada:
+		return
 
-func _desvirar_cartas_erradas() -> void:
+	# Vira a carta clicada imediatamente
+	carta.mostrar_frente()
+
+	# Consulta a lógica do jogo
+	var resultado: Dictionary = logica.escolher_carta(carta.posicao_index)
+
+	match resultado.get("status", ""):
+		"acertou":
+			# Par encontrado: _on_par_encontrado() já foi emitido pela lógica
+			# As cartas ficam viradas – nenhuma ação extra necessária aqui
+			pass
+
+		"errou":
+			# Duas cartas viradas e NÃO formam par.
+			# Bloqueia novos cliques, aguarda 1,2s para o jogador ver, depois desvira.
+			aguardando_resultado = true
+			await get_tree().create_timer(1.2).timeout
+			_desvirar_cartas_nao_pareadas()
+			aguardando_resultado = false
+
+		"continuar":
+			# Primeira carta virada – apenas espera o próximo clique
+			pass
+
+# Desvira SOMENTE as cartas que estão viradas mas não bloqueadas (par não encontrado)
+func _desvirar_cartas_nao_pareadas() -> void:
 	for carta in cartas:
 		if not carta.bloqueada and carta.virada:
 			carta.mostrar_verso()
 
+# ─── PAR ENCONTRADO ───────────────────────────────────────────────────────────
 func _on_par_encontrado(id_carta: String) -> void:
+	# Bloqueia as duas cartas do par recém-encontrado
 	for carta in cartas:
 		if carta.textura_frente == texturas_frente.get(id_carta, null) and carta.virada:
 			carta.bloquear()
 
+	# Verifica se o jogo terminou (todas as cartas bloqueadas)
 	var terminou = true
 	for carta in cartas:
 		if not carta.bloqueada:
@@ -177,14 +193,33 @@ func _on_par_encontrado(id_carta: String) -> void:
 			break
 
 	if terminou:
-		print("Jogo da Memória concluído!")
-		get_node("/root/GerenciadorJogo").avancar_exercicio()
-		if label_timer:
-			label_timer.text = "Tempo esgotado!"
-		tempo_restante = 600  # reinicia se quiser
+		print("[JogoMemoria] Todos os pares encontrados!")
+		_concluir_jogo()
 
+# ─── TEMPO ESGOTADO ───────────────────────────────────────────────────────────
 func terminar() -> void:
-	get_node("/root/GerenciadorJogo").avancar_exercicio()
+	print("[JogoMemoria] Tempo esgotado!")
+	# Impede novos cliques
+	aguardando_resultado = true
+	_concluir_jogo()
 
+# ─── CONCLUSÃO ────────────────────────────────────────────────────────────────
+func _concluir_jogo() -> void:
+	if timer:
+		timer.stop()
+
+	# Pontuação: cada segundo restante vale 5 pontos (máximo 900)
+	var pontuacao = clamp(int(tempo_restante * 5), 0, 900)
+
+	if has_node("/root/GerenciadorRanking"):
+		GerenciadorRanking.pontos_memoria = pontuacao
+		print("[JogoMemoria] Pontuação salva: ", pontuacao)
+
+	if has_node("/root/GerenciadorJogo"):
+		GerenciadorJogo.avancar_exercicio()
+
+# ─── BOTÃO VOLTAR ────────────────────────────────────────────────────────────
 func _on_botao_voltar_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/menu_principal.tscn")
+	if has_node("/root/GerenciadorAudio"):
+		GerenciadorAudio.tocar("voltar")
+	get_tree().change_scene_to_file("res://scenes/orquestrer.tscn")

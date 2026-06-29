@@ -17,6 +17,7 @@ script = ExtResource("1_actu2")
 [connection signal="pressed" from="About/back_button" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="Exit/HBoxContainer/sim" to="." method="_on_sim_pressed"]
 [connection signal="pressed" from="Exit/HBoxContainer/nao" to="." method="_on_nao_pressed"]
+[connection signal="pressed" from="MenuPrincipal/MarginContainer/HBoxContainer/vol_button" to="." method="_on_vol_button_pressed"]
 [connection signal="pressed" from="MenuPrincipal/MarginContainer/HBoxContainer/about_button" to="." method="_on_about_button_pressed"]
 [connection signal="pressed" from="MenuPrincipal/MarginContainer/HBoxContainer/exit_button" to="." method="_on_exit_button_pressed"]
 

@@ -35,5 +35,7 @@ func _on_pressed() -> void:
 	if bloqueada or virada:
 		return
 
-	var jogo = get_node("/root/JogoMemoria")
-	jogo.on_carta_clicada(self)
+	# Usa a cena atual (evita depender de um caminho fixo)
+	var jogo = get_tree().current_scene
+	if jogo and jogo.has_method("on_carta_clicada"):
+		jogo.on_carta_clicada(self)

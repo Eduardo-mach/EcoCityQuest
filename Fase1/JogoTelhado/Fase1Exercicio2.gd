@@ -42,7 +42,8 @@ func _atualizar_cronometro() -> void:
 	else:
 		timer_exercicio.stop()
 		timer_label.text = "Tempo esgotado!"
-		logica.emit_signal("exercicio_finalizado")
+		# Força conclusão com 0 pontos de tempo
+		_finalizar(false)
 
 func formatar_tempo(segundos: int) -> String:
 	var minutos = int(segundos / 60)
@@ -51,27 +52,44 @@ func formatar_tempo(segundos: int) -> String:
 
 # Botão de ajuda abre vídeo
 func _on_botao_ajuda_pressed() -> void:
-	video_player.stream = load("res://Fotos/Tutorial02.ogv")
+	if has_node("/root/GerenciadorAudio"):
+		GerenciadorAudio.tocar("ajuda")
+	video_player.stream = load("res://Fase1/JogoTelhado/Exercicio2/Tutorial02.ogv")
 	video_player.play()
 	video_player.visible = true
 
 # Botão voltar
 func _on_botao_voltar_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/menu_principal.tscn")
+	if has_node("/root/GerenciadorAudio"):
+		GerenciadorAudio.tocar("voltar")
+	get_tree().change_scene_to_file("res://scenes/orquestrer.tscn")
 
-# Lógica de objetivo concluído
+# Lógica de objetivo concluído (o telhado foi completado)
 func _on_objetivo_concluido(tipo: String) -> void:
 	if tipo == "telhado":
 		item_entulho.visible = false
 
-# Lógica de exercício finalizado
+# Lógica de exercício finalizado (emitido pela LogicaFase1Exercicio2)
 func _on_exercicio_finalizado() -> void:
-	print("Exercício Fase 1 - Exercício 2 concluído!")
-	var gerenciador = get_node("/root/GerenciadorJogo")
-	if gerenciador:
-		gerenciador.avancar_exercicio()
+	_finalizar(logica.telhado_concluido)
+
+func _finalizar(sucesso: bool) -> void:
+	timer_exercicio.stop()
+
+	# Calcula pontuação: mais tempo restante = mais pontos (max 900)
+	var pontuacao = int(tempo_restante * 5) if sucesso else 0
+	pontuacao = clamp(pontuacao, 0, 900)
+
+	# Salva no GerenciadorRanking
+	if has_node("/root/GerenciadorRanking"):
+		GerenciadorRanking.pontos_telhado = pontuacao
+		print("[JogoTelhado] Pontuação salva: ", pontuacao)
+
+	# Avança para ranking_telhado via GerenciadorJogo
+	if has_node("/root/GerenciadorJogo"):
+		GerenciadorJogo.avancar_exercicio()
 	else:
-		push_error("GerenciadorJogo não encontrado.")
+		push_error("[JogoTelhado] GerenciadorJogo não encontrado.")
 
 # Processamento de arrastar item
 func processar_item_arrastado(nome_objeto: String, nome_alvo: String) -> Dictionary:
@@ -81,4 +99,3 @@ func processar_item_arrastado(nome_objeto: String, nome_alvo: String) -> Diction
 
 func _on_video_stream_player_finished() -> void:
 	$video_player/VideoStreamPlayer.hide()
- 

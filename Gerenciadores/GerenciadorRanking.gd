@@ -1,30 +1,28 @@
 extends Node
 
-var pontos_exercicio1 : int = 0
-var pontos_exercicio2 : int = 0
+# ─── PONTUAÇÕES DA SESSÃO ATUAL ───────────────────────────────────────────────
+# Cada minijogo salva sua pontuação aqui antes de avançar para a tela de ranking
+var pontos_memoria: int = 0
+var pontos_telhado: int = 0
+var pontos_rua: int = 0
+var pontos_caca_palavras: int = 0
 
-# Função para registrar uma nova pontuação e ordenar o ranking
-func registrar_pontuacao(nome: String, erros: int, tempo_segundos: float):
-	# Quanto menor o tempo e menor o número de erros, melhor a pontuação
-	var pontuacao_final = int(10000 - (erros * 100) - tempo_segundos)
-	if pontuacao_final < 0: pontuacao_final = 0
-	
-	var novo_registro = {
-		"nome": nome,
-		"pontuacao": pontuacao_final,
-		"erros": erros,
-		"tempo": tempo_segundos
-	}
-	
-	# Puxa o ranking atual
-	var gerenciador = get_node("/root/GerenciadorRanking")
-	gerenciador.ranking.append(novo_registro)
-	
-	# Ordena do maior para o menor usando uma função customizada
-	gerenciador.ranking.sort_custom(func(a, b): return a["pontuacao"] > b["pontuacao"])
-	
-	# Garante que só fiquem os 5 melhores no Top 5
-	if gerenciador.ranking.size() > 5:
-		gerenciador.ranking.resize(5)
-		
-	gerenciador.salvar_ranking()
+# Aliases de compatibilidade (usados em scripts mais antigos)
+var pontos_exercicio1: int:
+	get: return pontos_memoria
+	set(v): pontos_memoria = v
+
+var pontos_exercicio2: int:
+	get: return pontos_caca_palavras
+	set(v): pontos_caca_palavras = v
+
+# ─── PONTUAÇÃO TOTAL DA SESSÃO ────────────────────────────────────────────────
+func get_pontuacao_total() -> int:
+	return pontos_memoria + pontos_telhado + pontos_rua + pontos_caca_palavras
+
+# ─── RESETAR PARA NOVO JOGO ───────────────────────────────────────────────────
+func resetar():
+	pontos_memoria = 0
+	pontos_telhado = 0
+	pontos_rua = 0
+	pontos_caca_palavras = 0
