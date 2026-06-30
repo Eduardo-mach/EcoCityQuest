@@ -5,7 +5,7 @@ const SCRIPT_CARTA = preload("res://Fase1/JogoMemoria/CartaMemoria.gd")
 @onready var logica: Node = $LogicaJogo
 @onready var grade_cartas: GridContainer = $GradeCartas
 @onready var botao_voltar: TextureButton = $BotaoVoltar
-@onready var botao_ajuda: TextureButton = $BotaoAjuda
+
 @onready var timer: Timer = get_node_or_null("TimerExercicio") as Timer
 @onready var label_timer: Label = get_node_or_null("LabelTimer") as Label
 
@@ -35,8 +35,7 @@ func _ready() -> void:
 		logica.connect("par_encontrado", Callable(self, "_on_par_encontrado"))
 
 	botao_voltar.pressed.connect(_on_botao_voltar_pressed)
-	botao_ajuda.pressed.connect(_on_botao_ajuda_pressed)
-	_criar_popup_video()
+
 	_montar_tabuleiro()
 	atualizar_label()
 
@@ -74,51 +73,6 @@ func atualizar_label() -> void:
 		return
 	label_timer.text = texto
 
-# ─── POPUP DE VÍDEO ───────────────────────────────────────────────────────────
-func _criar_popup_video() -> void:
-	popup_video = Control.new()
-	popup_video.set_anchors_preset(Control.PRESET_FULL_RECT)
-	popup_video.visible = false
-	add_child(popup_video)
-
-	var fundo = ColorRect.new()
-	fundo.set_anchors_preset(Control.PRESET_FULL_RECT)
-	fundo.color = Color(0, 0, 0, 0.7)
-	popup_video.add_child(fundo)
-
-	var container = CenterContainer.new()
-	container.set_anchors_preset(Control.PRESET_FULL_RECT)
-	popup_video.add_child(container)
-
-	var vbox = VBoxContainer.new()
-	vbox.add_theme_constant_override("separation", 16)
-	container.add_child(vbox)
-
-	video_player = VideoStreamPlayer.new()
-	video_player.custom_minimum_size = Vector2(560, 350)
-	video_player.stream = load("res://Fase1/JogoMemoria/Exercicio1/Tutorial01.ogv")
-	video_player.finished.connect(_on_video_finalizado)
-	vbox.add_child(video_player)
-
-	var botao_fechar = Button.new()
-	botao_fechar.text = "Fechar"
-	botao_fechar.custom_minimum_size = Vector2(120, 40)
-	botao_fechar.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
-	botao_fechar.pressed.connect(_on_botao_fechar_video_pressed)
-	vbox.add_child(botao_fechar)
-
-func _on_botao_ajuda_pressed() -> void:
-	if has_node("/root/GerenciadorAudio"):
-		GerenciadorAudio.tocar("ajuda")
-	popup_video.visible = true
-	video_player.play()
-
-func _on_botao_fechar_video_pressed() -> void:
-	popup_video.visible = false
-	video_player.stop()
-
-func _on_video_finalizado() -> void:
-	popup_video.visible = false
 
 # ─── TABULEIRO ────────────────────────────────────────────────────────────────
 func _montar_tabuleiro() -> void:

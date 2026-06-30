@@ -1,15 +1,31 @@
 extends Control
 
-const COR_FUNDO     = Color(0.07, 0.35, 0.15)
-const COR_PAINEL    = Color(0.98, 0.88, 0.30)
-const COR_TEXTO_ESC = Color(0.1,  0.1,  0.1)
-const COR_TEXTO_CLA = Color(1.0,  1.0,  1.0)
-const COR_OURO      = Color(1.0,  0.80, 0.0)
-const COR_PRATA     = Color(0.75, 0.75, 0.75)
-const COR_BRONZE    = Color(0.8,  0.50, 0.20)
-const COR_NORMAL    = Color(0.25, 0.25, 0.25)
-const COR_BOTAO_VRD = Color(0.09, 0.55, 0.22)
-const COR_BOTAO_VRM = Color(0.65, 0.10, 0.10)
+#const COR_FUNDO     = Color(0.07, 0.35, 0.15)
+#const COR_PAINEL    = Color(0.98, 0.88, 0.30)
+#const COR_TEXTO_ESC = Color(0.1,  0.1,  0.1)
+#const COR_TEXTO_CLA = Color(1.0,  1.0,  1.0)
+#const COR_OURO      = Color(1.0,  0.80, 0.0)
+#const COR_PRATA     = Color(0.75, 0.75, 0.75)
+#const COR_BRONZE    = Color(0.8,  0.50, 0.20)
+#const COR_NORMAL    = Color(0.25, 0.25, 0.25)
+#const COR_BOTAO_VRD = Color(0.09, 0.55, 0.22)
+#const COR_BOTAO_VRM = Color(0.65, 0.10, 0.10)
+
+# Cores de Estrutura e Interface (A cor da luz nos painéis)
+const COR_PAINEL     = Color(0.12, 0.10, 0.08, 1.0) # Sombra da noite (um marrom-grafite bem escuro e quente, onde a luz do poste não bate)
+const COR_FUNDO    = Color(0.93, 0.67, 0.12, 1.0) # Luz do Poste Antigo pura (Vapor de Sódio) - Seus painéis e menus vão brilhar nessa cor!
+const COR_TEXTO_ESC = Color(0.98, 0.95, 0.90)      # Marrom asfalto profundo (para escrever com contraste perfeito EM CIMA do painel amarelo)
+const COR_TEXTO_CLA = Color(0.98, 0.95, 0.90)      # Branco incandescente suave (para usar sobre o fundo escuro)
+
+# Cores de Ranking / Medalhas (Tons que combinam com a iluminação quente)
+const COR_OURO      = Color(1.00, 0.50, 0.00)      # Laranja vivo (para destacar do painel amarelo)
+const COR_PRATA     = Color(0.45, 0.47, 0.50)      # Cinza chumbo/sombra
+const COR_BRONZE    = Color(0.65, 0.35, 0.15)      # Marrom acobreado queimado
+const COR_NORMAL    = Color(0.30, 0.26, 0.22)      # Sombra neutra
+
+# Cores de Feedback / Botões (Ajustadas para não sumirem no fundo amarelo)
+const COR_BOTAO_VRD = Color(0.547, 0.698, 0.082, 1.0)      # Verde garrafa escuro (alta leitura sobre o amarelo)
+const COR_BOTAO_VRM = Color(0.65, 0.12, 0.12)      # Vermelho escuro/Alerta
 
 func _ready() -> void:
 	_construir_ui()
@@ -99,7 +115,7 @@ func _secao_sessao_atual(vbox: VBoxContainer) -> void:
 	var lbl = Label.new()
 	lbl.text = "🎉  Parabéns, %s!" % nome
 	lbl.add_theme_font_size_override("font_size", 28)
-	lbl.add_theme_color_override("font_color", Color(0.05, 0.45, 0.05))
+	lbl.add_theme_color_override("font_color", COR_BOTAO_VRD)
 	lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	vbox.add_child(lbl)
 
@@ -117,15 +133,15 @@ func _secao_sessao_atual(vbox: VBoxContainer) -> void:
 
 		var ln = Label.new()
 		ln.text = jogo[0]
-		ln.add_theme_font_size_override("font_size", 20)
+		ln.add_theme_font_size_override("font_size", 40)
 		ln.add_theme_color_override("font_color", COR_TEXTO_ESC)
 		ln.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		hbox.add_child(ln)
 
 		var lp = Label.new()
 		lp.text = str(jogo[1]) + " pts"
-		lp.add_theme_font_size_override("font_size", 20)
-		lp.add_theme_color_override("font_color", Color(0.05, 0.40, 0.05))
+		lp.add_theme_font_size_override("font_size", 30)
+		lp.add_theme_color_override("font_color", COR_BOTAO_VRD)
 		hbox.add_child(lp)
 
 		vbox.add_child(hbox)
@@ -144,7 +160,7 @@ func _secao_sessao_atual(vbox: VBoxContainer) -> void:
 	var ltp = Label.new()
 	ltp.text = str(gr.get_pontuacao_total()) + " pts"
 	ltp.add_theme_font_size_override("font_size", 30)
-	ltp.add_theme_color_override("font_color", Color(0.05, 0.45, 0.05))
+	ltp.add_theme_color_override("font_color", COR_BOTAO_VRD)
 	hbt.add_child(ltp)
 
 	vbox.add_child(hbt)
@@ -153,7 +169,7 @@ func _secao_sessao_atual(vbox: VBoxContainer) -> void:
 func _secao_top5(vbox: VBoxContainer) -> void:
 	var lbl_hist = Label.new()
 	lbl_hist.text = "🌟  TOP 5 – Melhores Jogadores de Todos os Tempos"
-	lbl_hist.add_theme_font_size_override("font_size", 22)
+	lbl_hist.add_theme_font_size_override("font_size", 32)
 	lbl_hist.add_theme_color_override("font_color", COR_TEXTO_ESC)
 	lbl_hist.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	lbl_hist.autowrap_mode = TextServer.AUTOWRAP_WORD
@@ -166,7 +182,7 @@ func _secao_top5(vbox: VBoxContainer) -> void:
 	if ranking.is_empty():
 		var lbl_vazio = Label.new()
 		lbl_vazio.text = "Seja o primeiro no ranking!"
-		lbl_vazio.add_theme_font_size_override("font_size", 20)
+		lbl_vazio.add_theme_font_size_override("font_size", 25)
 		lbl_vazio.add_theme_color_override("font_color", COR_TEXTO_ESC)
 		lbl_vazio.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 		vbox.add_child(lbl_vazio)
@@ -182,13 +198,13 @@ func _secao_top5(vbox: VBoxContainer) -> void:
 
 		var lbl_pos = Label.new()
 		lbl_pos.text = medalhas[i]
-		lbl_pos.add_theme_font_size_override("font_size", 24)
+		lbl_pos.add_theme_font_size_override("font_size", 45)
 		lbl_pos.custom_minimum_size = Vector2(48, 0)
 		linha.add_child(lbl_pos)
 
 		var lbl_nome = Label.new()
 		lbl_nome.text = str(entrada.get("nome", "?"))
-		lbl_nome.add_theme_font_size_override("font_size", 22)
+		lbl_nome.add_theme_font_size_override("font_size", 30)
 		lbl_nome.add_theme_color_override("font_color", cores[i])
 		lbl_nome.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		linha.add_child(lbl_nome)
@@ -214,7 +230,7 @@ func _secao_botoes(vbox: VBoxContainer) -> void:
 	hbox.add_child(btn_voltar_col)
 
 	var btn_voltar = TextureButton.new()
-	btn_voltar.texture_normal = load("res://assets/icone_voltar.png")
+	btn_voltar.texture_normal = load("res://assets/voltar-button.png")
 	btn_voltar.ignore_texture_size = true
 	btn_voltar.stretch_mode = TextureButton.STRETCH_KEEP_ASPECT_CENTERED
 	btn_voltar.custom_minimum_size = Vector2(80, 80)

@@ -8,7 +8,7 @@ var telhado_concluido: bool = false
 
 var timer_exercicio: Timer
 var timer_label: Label
-var tempo_restante: int = 10  # segundos de duração do exercício
+var tempo_restante: int = 180  # segundos de duração do exercício
 
 func _ready() -> void:
 	# Criar Timer
@@ -27,7 +27,7 @@ func _ready() -> void:
 
 func inicializar_exercicio():
 	telhado_concluido = false
-	tempo_restante = 10  # reinicia o cronômetro
+	tempo_restante = 180  # reinicia o cronômetro
 	timer_label.text = formatar_tempo(tempo_restante)
 	timer_exercicio.start()
 

@@ -75,6 +75,8 @@ func criar_tabuleiro():
 		var estilo_branco = StyleBoxFlat.new()
 		estilo_branco.bg_color = Color(1, 1, 1)
 		estilo_branco.set_corner_radius_all(4)
+		estilo_branco.border_color = Color(0, 0, 0)
+		estilo_branco.set_border_width_all(2)
 		botao.add_theme_stylebox_override("normal", estilo_branco)
 		botao.add_theme_stylebox_override("hover", estilo_branco)
 		botao.add_theme_stylebox_override("pressed", estilo_branco)

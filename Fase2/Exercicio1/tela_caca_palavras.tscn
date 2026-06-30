@@ -1,15 +1,15 @@
-[gd_scene load_steps=14 format=3 uid="uid://conakqakr8d0k"]
+[gd_scene format=3 uid="uid://conakqakr8d0k"]
 
 [ext_resource type="Script" uid="uid://coxprr0phvkl" path="res://Fase2/Exercicio1/tela_caca_palavras.gd" id="1_pbs4g"]
-[ext_resource type="Texture2D" uid="uid://ymyqqqjrfmy0" path="res://Fotos e Videos/8947fb72b08a69bca952e4c77b909509.jpg" id="2_y0aah"]
-[ext_resource type="Texture2D" uid="uid://bja784sqcjdci" path="res://Fotos e Videos/Bot├úo voltar.png" id="3_pbs4g"]
-[ext_resource type="Texture2D" uid="uid://56nogm1m2wg7" path="res://Fotos e Videos/images (1).jpg" id="3_y0aah"]
-[ext_resource type="Texture2D" uid="uid://b1yb5rf6vjgfe" path="res://Fotos e Videos/Ellipse 1.png" id="4_pbs4g"]
-[ext_resource type="Texture2D" uid="uid://b1oakg46gcsd3" path="res://Fotos e Videos/Bot├úo ajuda.png" id="4_y0aah"]
+[ext_resource type="Texture2D" uid="uid://ckam6hvfo7go0" path="res://assets/f2_background.png" id="2_3k66s"]
+[ext_resource type="Texture2D" uid="uid://7o6ne1uuepgc" path="res://assets/text-box.svg" id="3_1lmw3"]
+[ext_resource type="Texture2D" uid="uid://3o3yr5fy5tev" path="res://assets/text-box-sqr.svg" id="3_3k66s"]
+[ext_resource type="Texture2D" uid="uid://bja784sqcjdci" path="res://Fotos/Bot├úo voltar.png" id="3_pbs4g"]
+[ext_resource type="Texture2D" uid="uid://b1yb5rf6vjgfe" path="res://Fotos/Ellipse 1.png" id="4_pbs4g"]
+[ext_resource type="Texture2D" uid="uid://b1oakg46gcsd3" path="res://Fotos/Bot├úo ajuda.png" id="4_y0aah"]
 [ext_resource type="Script" uid="uid://cdus3o2q4elb3" path="res://Fase2/Exercicio1/botao_voltar.gd" id="6_3d23e"]
 [ext_resource type="FontFile" uid="uid://c7kk8scqhpcmo" path="res://assets/fonts/Inter-VariableFont_opsz,wght.ttf" id="7_vqkkh"]
 [ext_resource type="Script" uid="uid://di7cddq4inx05" path="res://Fase2/Exercicio1/botao_ajuda.gd" id="8_1lmw3"]
-[ext_resource type="VideoStream" uid="uid://dv6opd83ktplc" path="res://Fotos e Videos/Tutorial04.ogv" id="10_3k66s"]
 
 [sub_resource type="FontVariation" id="FontVariation_3d23e"]
 base_font = ExtResource("7_vqkkh")
@@ -22,13 +22,28 @@ variation_opentype = {
 font = SubResource("FontVariation_3d23e")
 font_size = 64
 font_color = Color(0, 0, 0, 1)
+outline_size = 12
 
 [sub_resource type="LabelSettings" id="LabelSettings_1lmw3"]
 font = ExtResource("7_vqkkh")
-font_size = 28
+font_size = 32
 font_color = Color(0, 0, 0, 1)
+outline_size = 12
 
-[node name="CacaPalavras" type="Control"]
+[sub_resource type="FontVariation" id="FontVariation_ymime"]
+base_font = ExtResource("7_vqkkh")
+variation_opentype = {
+1869640570: 14,
+2003265652: 600
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_yadnc"]
+font = SubResource("FontVariation_ymime")
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+outline_size = 12
+
+[node name="CacaPalavras" type="Control" unique_id=882404273]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -38,23 +53,22 @@ grow_vertical = 2
 script = ExtResource("1_pbs4g")
 metadata/_edit_use_anchors_ = true
 
-[node name="FundoRoxo" type="TextureRect" parent="."]
+[node name="FundoRoxo" type="TextureRect" parent="." unique_id=1312718885]
 layout_mode = 0
 offset_right = 1081.0
 offset_bottom = 717.0
-texture = ExtResource("2_y0aah")
-expand_mode = 1
+texture = ExtResource("2_3k66s")
 
-[node name="FundoCinza2" type="TextureRect" parent="."]
+[node name="FundoCinza2" type="TextureRect" parent="." unique_id=738883663]
 layout_mode = 0
-offset_left = 46.0
+offset_left = 104.0
 offset_top = 244.0
-offset_right = 331.0
+offset_right = 389.0
 offset_bottom = 453.0
-texture = ExtResource("3_y0aah")
+texture = ExtResource("3_3k66s")
 expand_mode = 1
 
-[node name="MarginContainer_Jogo" type="MarginContainer" parent="."]
+[node name="MarginContainer_Jogo" type="MarginContainer" parent="." unique_id=365122673]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -64,48 +78,48 @@ offset_top = 198.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HBoxContainer_Conteudo" type="HBoxContainer" parent="MarginContainer_Jogo"]
+[node name="HBoxContainer_Conteudo" type="HBoxContainer" parent="MarginContainer_Jogo" unique_id=2144047260]
 layout_mode = 2
 
-[node name="PainelPalavra" type="TextureRect" parent="MarginContainer_Jogo/HBoxContainer_Conteudo"]
+[node name="PainelPalavra" type="TextureRect" parent="MarginContainer_Jogo/HBoxContainer_Conteudo" unique_id=2004447511]
 layout_mode = 2
 
-[node name="FundoCinza" type="TextureRect" parent="."]
+[node name="FundoCinza" type="TextureRect" parent="." unique_id=1170801200]
 layout_mode = 0
 offset_left = 19.0
 offset_top = 59.0
-offset_right = 1072.0
+offset_right = 1148.0
 offset_bottom = 214.0
-texture = ExtResource("3_y0aah")
+texture = ExtResource("3_1lmw3")
 expand_mode = 1
 
-[node name="CronometroVisua" type="TextureRect" parent="."]
+[node name="CronometroVisua" type="TextureRect" parent="." unique_id=642774977]
 layout_mode = 0
-offset_left = 982.0
-offset_top = 214.0
-offset_right = 1137.0
-offset_bottom = 368.00003
+offset_left = 1177.0
+offset_top = 180.0
+offset_right = 1332.0
+offset_bottom = 334.00003
 scale = Vector2(0.561266, 0.5972899)
 texture = ExtResource("4_pbs4g")
 
-[node name="Botao_Voltar" type="TextureButton" parent="."]
+[node name="Botao_Voltar" type="TextureButton" parent="." unique_id=388553309]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.68200004
 anchor_top = 0.74
 anchor_right = 0.68200004
 anchor_bottom = 0.74
-offset_left = 250.44
-offset_top = -208.79999
-offset_right = 353.43994
-offset_bottom = -105.79999
+offset_left = 312.03992
+offset_top = -510.8
+offset_right = 415.03992
+offset_bottom = -407.8
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.74558204, 0.68921727)
+scale = Vector2(0.7, 0.7)
 texture_normal = ExtResource("3_pbs4g")
 script = ExtResource("6_3d23e")
 
-[node name="Button" type="Button" parent="Botao_Voltar"]
+[node name="Button" type="Button" parent="Botao_Voltar" unique_id=1408076968]
 visible = false
 layout_mode = 0
 offset_left = 5.364936
@@ -113,17 +127,17 @@ offset_top = 11.607369
 offset_right = 88.52143
 offset_bottom = 92.858955
 
-[node name="Botao_Ajuda" type="TextureButton" parent="."]
+[node name="Botao_Ajuda" type="TextureButton" parent="." unique_id=84065463]
 layout_mode = 0
-offset_left = 980.0
-offset_top = 406.00006
-offset_right = 1083.0
-offset_bottom = 509.00006
-scale = Vector2(0.88006014, 0.6545355)
+offset_left = 1186.0001
+offset_top = 101.000015
+offset_right = 1289.0001
+offset_bottom = 204.00002
+scale = Vector2(0.7, 0.7)
 texture_normal = ExtResource("4_y0aah")
 script = ExtResource("8_1lmw3")
 
-[node name="Button" type="Button" parent="Botao_Ajuda"]
+[node name="Button" type="Button" parent="Botao_Ajuda" unique_id=170331531]
 visible = false
 layout_mode = 0
 offset_left = 17.04429
@@ -131,7 +145,7 @@ offset_top = 10.694515
 offset_right = 93.17539
 offset_bottom = 87.08447
 
-[node name="Titulo" type="Label" parent="."]
+[node name="Titulo" type="Label" parent="." unique_id=322285347]
 layout_mode = 0
 offset_left = 65.0
 offset_top = 72.0
@@ -145,94 +159,81 @@ label_settings = SubResource("LabelSettings_yvjxp")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Descricao" type="Label" parent="."]
+[node name="Descricao" type="Label" parent="." unique_id=120201347]
 layout_mode = 0
-offset_left = 91.0
-offset_top = 144.0
-offset_right = 1034.0
-offset_bottom = 193.0
+offset_left = 47.0
+offset_top = 148.0
+offset_right = 1126.0
+offset_bottom = 197.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 31
 text = "Procure as palavras com que você se deparou ao longo das atividades."
 label_settings = SubResource("LabelSettings_1lmw3")
 
-[node name="Label_EOLICA" type="Label" parent="."]
+[node name="Label_EOLICA" type="Label" parent="." unique_id=118627803]
 layout_mode = 0
-offset_left = 95.0
-offset_top = 276.0
-offset_right = 189.0
-offset_bottom = 313.0
+offset_left = 138.0
+offset_top = 277.0
+offset_right = 278.0
+offset_bottom = 316.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 27
 text = "- EÓLICA"
+label_settings = SubResource("LabelSettings_yadnc")
 
-[node name="Label_SOLAR" type="Label" parent="."]
+[node name="Label_SOLAR" type="Label" parent="." unique_id=1616608385]
 layout_mode = 0
-offset_left = 95.0
-offset_top = 307.0
-offset_right = 351.0
-offset_bottom = 344.0
+offset_left = 138.0
+offset_top = 308.0
+offset_right = 394.0
+offset_bottom = 347.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 27
 text = "- SOLAR"
+label_settings = SubResource("LabelSettings_yadnc")
 
-[node name="Label_REUSO" type="Label" parent="."]
+[node name="Label_REUSO" type="Label" parent="." unique_id=1908753565]
 layout_mode = 0
-offset_left = 94.0
-offset_top = 343.0
-offset_right = 281.0
-offset_bottom = 380.0
+offset_left = 137.0
+offset_top = 344.0
+offset_right = 324.0
+offset_bottom = 383.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 27
 text = "- REUSO"
+label_settings = SubResource("LabelSettings_yadnc")
 
-[node name="Label_ECO" type="Label" parent="."]
+[node name="Label_ECO" type="Label" parent="." unique_id=178644833]
 layout_mode = 0
-offset_left = 98.0
-offset_top = 379.0
-offset_right = 151.0
-offset_bottom = 416.0
+offset_left = 141.0
+offset_top = 380.0
+offset_right = 232.0
+offset_bottom = 419.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 27
 text = "- ECO"
+label_settings = SubResource("LabelSettings_yadnc")
 
-[node name="GridContainer_Matriz" type="GridContainer" parent="."]
+[node name="GridContainer_Matriz" type="GridContainer" parent="." unique_id=195045679]
 layout_mode = 0
-offset_left = 484.0
-offset_top = 238.0
-offset_right = 812.0
-offset_bottom = 442.0
+offset_left = 521.0
+offset_top = 254.0
+offset_right = 849.0
+offset_bottom = 458.0
 columns = 8
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=882476114]
 autostart = true
 
-[node name="Label_Cronometro" type="Label" parent="."]
+[node name="Label_Cronometro" type="Label" parent="." unique_id=1445533382]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.22900002
 anchor_bottom = 0.33200002
-offset_left = 1001.0
-offset_top = 246.00003
-offset_right = 805.68
-offset_bottom = 58.864014
+offset_left = 1196.0
+offset_top = 212.00003
+offset_right = 1000.68005
+offset_bottom = 24.864014
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "00:00"
-
-[node name="VideoPlayer" type="Control" parent="."]
-anchors_preset = 0
-offset_left = 987.0
-offset_top = 324.0
-offset_right = 1027.0
-offset_bottom = 364.0
-
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="VideoPlayer"]
-layout_mode = 0
-offset_left = -983.00006
-offset_top = -325.0
-offset_right = 92.99994
-offset_bottom = 387.0
-scale = Vector2(1.0029018, 1.0076504)
-mouse_filter = 2
-stream = ExtResource("10_3k66s")
