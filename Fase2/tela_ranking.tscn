@@ -4,8 +4,8 @@
 [ext_resource type="Script" uid="uid://b6v1q7ypdg5s6" path="res://Fase2/tela_ranking.gd" id="1_rr7na"]
 [ext_resource type="Texture2D" uid="uid://c66tadcbiloj6" path="res://Fotos/Rectangle 35.png" id="2_13rke"]
 [ext_resource type="Texture2D" uid="uid://c7vtt6q4edtru" path="res://Fotos/trofeu.png" id="3_c22wc"]
-[ext_resource type="Texture2D" uid="uid://bja784sqcjdci" path="res://Fotos/Botão voltar.png" id="4_13rke"]
 [ext_resource type="Texture2D" uid="uid://d11ks61rpriro" path="res://Fotos/Rectangle 60.png" id="4_aak6l"]
+[ext_resource type="Texture2D" uid="uid://dw6bmn2vjuv86" path="res://assets/voltar-button.png" id="5_rr7na"]
 [ext_resource type="Texture2D" uid="uid://djq2a6654pa1o" path="res://Fotos/crown-star-svgrepo-com 1.png" id="5_u53vx"]
 
 [node name="TelaRanking" type="Control" unique_id=1142074640]
@@ -57,13 +57,12 @@ theme_override_font_sizes/font_size = 59
 text = "RANKING GERAL"
 
 [node name="Botao_Voltar" type="TextureButton" parent="." unique_id=1860477025]
-visible = false
 layout_mode = 0
 offset_left = 1052.0
 offset_top = 529.0
 offset_right = 1155.0
 offset_bottom = 632.0
-texture_normal = ExtResource("4_13rke")
+texture_normal = ExtResource("5_rr7na")
 
 [node name="Barra_1Lugar" type="TextureRect" parent="." unique_id=372809103]
 layout_mode = 0

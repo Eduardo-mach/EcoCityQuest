@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b7khleae6ulc0"]
 
 [ext_resource type="Texture2D" uid="uid://47h52imnfl0f" path="res://assets/backgrounds/green_background.png" id="1_dbr4p"]
-[ext_resource type="Texture2D" uid="uid://ck52wb1vw7ucu" path="res://assets/textures/exit-question.svg" id="2_i0gmu"]
+[ext_resource type="Texture2D" uid="uid://bqgble6ern6vt" path="res://assets/exit-question.png" id="2_qk5x0"]
 [ext_resource type="PackedScene" uid="uid://cibrt8b4wwe41" path="res://scenes/style_choice_buttons.tscn" id="3_qk5x0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qk5x0"]
@@ -42,7 +42,7 @@ offset_bottom = 430.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_i0gmu")
+texture = ExtResource("2_qk5x0")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=795092101]
 layout_mode = 1

@@ -24,7 +24,7 @@ func _ready():
 		if barras[i]:
 			var entrada = ranking[i]
 			barras[i].text = medalhas_prefix[i] + str(entrada.get("nome", "?")) + "   " + str(entrada.get("pontuacao", 0)) + " pts"
-			barras[i].add_theme_font_size_override("font_size", 22)
+			barras[i].add_theme_font_size_override("font_size", 30)
 
 	# Conecta botão voltar se existir
 	var botao_voltar = get_node_or_null("Botao_Voltar")

@@ -5,14 +5,14 @@ extends Control
 @onready var item_entulho: Control = $ItemEntulho
 @onready var drop_telhado: Control = $DropTelhado
 @onready var botao_voltar: TextureButton = $BotaoVoltar
-@onready var botao_ajuda: TextureButton = $BotaoAjuda
+#@onready var botao_ajuda: TextureButton = $BotaoAjuda
 @onready var timer_exercicio: Timer = $TimerExercicio
 @onready var timer_label: Label = $TimerExercicio/LabelTimer
 
-# Aqui acessamos o filho VideoStreamPlayer dentro do Control "video_player"
-@onready var video_player: VideoStreamPlayer = $video_player/VideoStreamPlayer
-
 var tempo_restante: int = 180  # 3 minutos em segundos
+
+var popup_video: Control
+var video_player: VideoStreamPlayer
 
 func _ready() -> void:
 	if logica.has_signal("objetivo_concluido"):
@@ -21,10 +21,8 @@ func _ready() -> void:
 		logica.connect("exercicio_finalizado", Callable(self, "_on_exercicio_finalizado"))
 
 	botao_voltar.pressed.connect(_on_botao_voltar_pressed)
-	botao_ajuda.pressed.connect(_on_botao_ajuda_pressed)
 
 	logica.inicializar_exercicio()
-
 	# Configura Timer para disparar a cada 1 segundo
 	timer_exercicio.wait_time = 1.0
 	timer_exercicio.one_shot = false
@@ -49,14 +47,6 @@ func formatar_tempo(segundos: int) -> String:
 	var minutos = int(segundos / 60)
 	var seg = int(segundos % 60)
 	return str(minutos).pad_zeros(2) + ":" + str(seg).pad_zeros(2)
-
-# Botão de ajuda abre vídeo
-func _on_botao_ajuda_pressed() -> void:
-	if has_node("/root/GerenciadorAudio"):
-		GerenciadorAudio.tocar("ajuda")
-	video_player.stream = load("res://Fase1/JogoTelhado/Exercicio2/Tutorial02.ogv")
-	video_player.play()
-	video_player.visible = true
 
 # Botão voltar
 func _on_botao_voltar_pressed() -> void:
@@ -96,6 +86,3 @@ func processar_item_arrastado(nome_objeto: String, nome_alvo: String) -> Diction
 	if nome_objeto == "placa_solar" and nome_alvo == "telhado":
 		return {"sucesso": true}
 	return {"sucesso": false}
-
-func _on_video_stream_player_finished() -> void:
-	$video_player/VideoStreamPlayer.hide()

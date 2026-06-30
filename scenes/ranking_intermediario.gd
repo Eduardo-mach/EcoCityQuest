@@ -2,13 +2,23 @@ extends Control
 # Script único para todos os rankings intermediários.
 # Detecta qual jogo foi concluído pelo caminho da cena atual.
 
-const COR_FUNDO       = Color(0.09, 0.45, 0.18)
-const COR_PAINEL      = Color(0.98, 0.88, 0.30)
-const COR_TEXTO_ESC   = Color(0.1, 0.1, 0.1)
-const COR_OURO        = Color(1.0, 0.80, 0.0)
-const COR_PRATA       = Color(0.75, 0.75, 0.75)
-const COR_BRONZE      = Color(0.8, 0.50, 0.20)
-const COR_BOTAO       = Color(0.09, 0.55, 0.22)
+const COR_BOTAO       = Color(0.547, 0.698, 0.082, 1.0) 
+
+# Cores de Estrutura e Interface (A cor da luz nos painéis)
+const COR_PAINEL     = Color(0.12, 0.10, 0.08, 1.0) # Sombra da noite (um marrom-grafite bem escuro e quente, onde a luz do poste não bate)
+const COR_FUNDO    = Color(0.93, 0.67, 0.12, 1.0) # Luz do Poste Antigo pura (Vapor de Sódio) - Seus painéis e menus vão brilhar nessa cor!
+const COR_TEXTO_ESC = Color(0.98, 0.95, 0.90)      # Marrom asfalto profundo (para escrever com contraste perfeito EM CIMA do painel amarelo)
+const COR_TEXTO_CLA = Color(0.98, 0.95, 0.90)      # Branco incandescente suave (para usar sobre o fundo escuro)
+
+# Cores de Ranking / Medalhas (Tons que combinam com a iluminação quente)
+const COR_OURO      = Color(1.00, 0.50, 0.00)      # Laranja vivo (para destacar do painel amarelo)
+const COR_PRATA     = Color(0.45, 0.47, 0.50)      # Cinza chumbo/sombra
+const COR_BRONZE    = Color(0.65, 0.35, 0.15)      # Marrom acobreado queimado
+const COR_NORMAL    = Color(0.30, 0.26, 0.22)      # Sombra neutra
+
+# Cores de Feedback / Botões (Ajustadas para não sumirem no fundo amarelo)
+const COR_BOTAO_VRD = Color(0.547, 0.698, 0.082, 1.0)      # Verde garrafa escuro (alta leitura sobre o amarelo)
+const COR_BOTAO_VRM = Color(0.65, 0.12, 0.12)    
 
 var label_pontos_jogador: Label
 var vbox_ranking: VBoxContainer
@@ -54,7 +64,7 @@ func _construir_ui(titulo_jogo: String) -> void:
 	add_child(center)
 
 	var vbox_main = VBoxContainer.new()
-	vbox_main.add_theme_constant_override("separation", 24)
+	vbox_main.add_theme_constant_override("separation", 12)
 	vbox_main.custom_minimum_size = Vector2(700, 0)
 	center.add_child(vbox_main)
 
@@ -89,7 +99,7 @@ func _construir_ui(titulo_jogo: String) -> void:
 	label_pontos_jogador = Label.new()
 	label_pontos_jogador.text = "---"
 	label_pontos_jogador.add_theme_font_size_override("font_size", 36)
-	label_pontos_jogador.add_theme_color_override("font_color", Color(0.05, 0.45, 0.05))
+	label_pontos_jogador.add_theme_color_override("font_color", COR_BOTAO)
 	hbox_jogador.add_child(label_pontos_jogador)
 
 	vbox_main.add_child(HSeparator.new())
@@ -148,7 +158,7 @@ func _popular_dados(chave_pontuacao: String) -> void:
 
 		var lbl_med = Label.new()
 		lbl_med.text = medalhas[i]
-		lbl_med.add_theme_font_size_override("font_size", 28)
+		lbl_med.add_theme_font_size_override("font_size", 50)
 		lbl_med.custom_minimum_size = Vector2(40, 0)
 		linha.add_child(lbl_med)
 
